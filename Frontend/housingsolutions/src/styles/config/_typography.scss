@@ -1,17 +1,18 @@
-$defaultFontStack:Georgia, serif;
+$font__stack--default:Georgia, serif;
 
 @mixin size($size) {
     font-size: ($size/16)+rem; //convert px to rem
   }
 
 
-$primaryFont:16px;
-$secondaryFont:14px;
+$font__body:16px;
+$font__body--secondary:14px;
 
-$primaryTitleFont:20px;
-$secondaryTitleFont:18px;
+$font__title:20px;
+$font__title--secondary:18px;
 
-$subtitleFont:13px;
+$font__subtitle:13px;
+
 
 
 
