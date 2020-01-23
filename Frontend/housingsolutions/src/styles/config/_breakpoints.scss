@@ -1,31 +1,24 @@
-@use 'sass:meta';
 
-@use 'sass:string';
-
-$breakpoints-map: (
-    'screen-768': '(width < 48em)',
-    'screen-768-landscape': '(width < 48em) and (orientation: landscape)',
-    'screen-1024': '(width >= 48em)',
-    'screen-1024-landscape': '(width >= 48em) and (orientation: landscape)',
-    'screen-1200': '(width >= 64em)',
-    'screen-1320': '(width >= 75em)',
+$breakpoints: (
+    'screen-small': (max-width : 47.94em), //767px
+    'screen-small-landscape': (max-width : 47.94em) and (orientation: landscape), 
+    'screen-medium': (min-width :  48em), //768px
+    'screen-medium-landscape': (min-width :  48em) and (orientation: landscape),
+    'screen-large': (min-width :  64em), //1024px
+    'screen-xl': (min-width :  75em), //1200px
 );
 
-@mixin breakpoint-until($breakpoint) {
-    $raw-query: map-get($breakpoints-map, $breakpoint);
-
-    @if $raw-query {
-        $query: if(
-            meta.type-of($raw-query) == 'string',
-            string.unquote($raw-query),
-            meta.inspect($raw-query)
-        );
-
-        @media #{$query} {
-            @content;
-        }
-    } @else {
-        @error 'No value found for `#{$breakpoint}`. '
-            + 'Please make sure it is defined in `$breakpoints` map.';
+@mixin respond-to($name) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $name) {
+      // Prints a media query based on the value
+      @media #{inspect(map-get($breakpoints, $name))} {
+        @content;
+      }
     }
-}
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoints}`. "
+          + "Please make sure it is defined in `$breakpoints` map.";
+    }
+  }
