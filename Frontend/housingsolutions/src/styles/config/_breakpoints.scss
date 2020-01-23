@@ -1,0 +1,31 @@
+@use 'sass:meta';
+
+@use 'sass:string';
+
+$breakpoints-map: (
+    'screen-768': '(width < 48em)',
+    'screen-768-landscape': '(width < 48em) and (orientation: landscape)',
+    'screen-1024': '(width >= 48em)',
+    'screen-1024-landscape': '(width >= 48em) and (orientation: landscape)',
+    'screen-1200': '(width >= 64em)',
+    'screen-1320': '(width >= 75em)',
+);
+
+@mixin breakpoint-until($breakpoint) {
+    $raw-query: map-get($breakpoints-map, $breakpoint);
+
+    @if $raw-query {
+        $query: if(
+            meta.type-of($raw-query) == 'string',
+            string.unquote($raw-query),
+            meta.inspect($raw-query)
+        );
+
+        @media #{$query} {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}`. '
+            + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+}
