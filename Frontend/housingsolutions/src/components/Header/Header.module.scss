@@ -1,0 +1,39 @@
+@import '../../styles/config';
+
+.Header{
+    display:flex;
+    width:100%;
+    color:$color__white;
+    background:$color__blue;
+}
+
+.Header_items{
+    display: flex;
+    width:75%;
+    margin:auto;
+    justify-content: flex-end;
+    align-items:center;
+    list-style: none; 
+}
+
+.Header_item{
+    padding:1.8rem 1.5rem;
+}
+
+.Header_item___title{
+    margin-right:auto;
+    display: flex;
+    align-items: center;
+}
+
+.Header_title{
+    font-size:$font__title;
+    font-weight: bold;
+    margin-top:auto;
+    letter-spacing: 3px;
+}
+
+.Header_logo{
+    width:3.5rem;
+    margin-right:0.5rem;
+}
