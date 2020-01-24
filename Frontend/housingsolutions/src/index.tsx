@@ -9,6 +9,11 @@ const routing = (
   <Router>
     <div>
       <Route exact path="/" component={App} />
+      {/*   <Route  path="/search" component={SearchProperties} />
+      <Route  path="/property" component={PropertyDetails} />
+      <Route  path="/book" component={BookProperty} />
+      <Route  path="/login" component={UserLogin} />
+      <Route  path="/singup" component={UserSignup} /> */}
     </div>
   </Router>
 );
