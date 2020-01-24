@@ -1,0 +1,7 @@
+@import '../../styles/config';
+
+.main{
+    @include respond-to(screen-medium){
+        color:$color__orange;
+    }
+}
