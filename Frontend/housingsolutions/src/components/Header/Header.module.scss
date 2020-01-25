@@ -1,39 +1,102 @@
 @import '../../styles/config';
 
-.Header{
-    display:flex;
-    width:100%;
-    color:$color__white;
-    background:$color__blue;
-}
-
-.Header_items{
+.Header {
     display: flex;
-    width:75%;
-    margin:auto;
+    width: 100%;
+    color: $color__white;
+    background: $color__blue;
+}
+
+.Header_items {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    padding:0 1.5rem;
     justify-content: flex-end;
-    align-items:center;
-    list-style: none; 
+    align-items: center;
+    list-style: none;
+    @include respond-to(screen-xl) {
+        width: 80%;
+        padding:auto;
+    }
 }
 
-.Header_item{
-    padding:1.8rem 1.5rem;
+.Header_item {
+    padding: 1.4rem 0;
+    display: none;
+
+    @include respond-to(screen-large) {
+        display: block;
+  padding: 1.8rem 1.5rem;
+        &:last-child {
+            margin-right: 3.3rem;
+        }
+    }
+
+    &:hover {
+        color: $color__orange--secondary;
+        cursor: pointer;
+    }
 }
 
-.Header_item___title{
-    margin-right:auto;
+.Header_item___title {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    &:hover {
+        color: $color__white;
+    }
+}
+
+.Header_item___login {
+    &:after {
+        content: '|';
+        display: inline-block;
+        margin-left: 1.3rem;
+    }
+
+    &:hover {
+        &:after {
+            color: $color__white;
+        }
+    }
+}
+
+.Header_item___register {
+    padding-left: 0.1rem;
+}
+
+.Header_title {
+    font-size: $font__title--secondary;
+    font-weight: bold;
+    margin-top: auto;
+    letter-spacing: 2px;
+    @include respond-to(screen-large) {
+        font-size: $font__title;
+        letter-spacing: 3px;
+    }
+}
+
+.Header_logo {
+    width: 2.8rem;
+    margin-right: 0.5rem;
+    @include respond-to(screen-large) {
+        width: 3.5rem;
+    }
+}
+
+.Header_contact {
     display: flex;
     align-items: center;
 }
 
-.Header_title{
-    font-size:$font__title;
-    font-weight: bold;
-    margin-top:auto;
-    letter-spacing: 3px;
+.Header_phoneIcon {
+    margin-right: 1rem;
 }
 
-.Header_logo{
-    width:3.5rem;
-    margin-right:0.5rem;
+.Header_item___menuBar{
+    display:flex;
+    @include respond-to(screen-large) {
+display:none;
+    }
 }
