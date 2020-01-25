@@ -1,22 +1,20 @@
 @import 'styles/config';
 
-
 html {
-  font-size: 62.5%; // 1rem == 10px
-  text-size-adjust: 100%; // controls the text inflation on mobile devices.
-  -webkit-overflow-scrolling: touch; // adds smooth scrolling for iOS devices.
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 62.5%; // 1rem == 10px
+    text-size-adjust: 100%; // controls the text inflation on mobile devices.
+    -webkit-overflow-scrolling: touch; // adds smooth scrolling for iOS devices.
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
-  margin: 0;
-  font-size:$font__body;
-  font-family: $font__stack--default;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-size: $font__body;
+    font-family: $font__stack--default;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
