@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import App from "./containers/App/App";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faPhoneAlt, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faPhoneAlt, faBars, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 
 const routing = (
   <Router>
@@ -21,7 +21,7 @@ const routing = (
   </Router>
 );
 
-library.add(fab, faPhoneAlt, faBars);
+library.add(fab, faPhoneAlt, faBars, faWindowClose);
 ReactDOM.render(routing, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
