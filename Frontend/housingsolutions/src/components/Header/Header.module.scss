@@ -96,6 +96,11 @@
 
 .Header_item___menuBar {
     display: flex;
+
+    &:active {
+        color: $color__orange--secondary;
+    }
+
     @include respond-to(screen-large) {
         display: none;
     }
