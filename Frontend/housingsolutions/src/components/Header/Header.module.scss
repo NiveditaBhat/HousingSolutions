@@ -15,6 +15,7 @@
     justify-content: flex-end;
     align-items: center;
     list-style: none;
+
     @include respond-to(screen-xl) {
         width: 80%;
         padding: auto;
@@ -43,12 +44,14 @@
     margin-right: auto;
     display: flex;
     align-items: center;
+
     &:hover {
         color: $color__white;
     }
 }
 
 .Header_item___login {
+
     &:after {
         content: '|';
         display: inline-block;
@@ -71,6 +74,7 @@
     font-weight: bold;
     margin-top: auto;
     letter-spacing: 2px;
+
     @include respond-to(screen-large) {
         font-size: $font__title;
         letter-spacing: 3px;
@@ -80,6 +84,7 @@
 .Header_logo {
     width: 2.8rem;
     margin-right: 0.5rem;
+    
     @include respond-to(screen-large) {
         width: 3.5rem;
     }
