@@ -1,0 +1,30 @@
+@import '../../styles/config';
+
+.FooterItem {
+    margin-bottom: 2.2rem;
+
+    @include respond-to(screen-large) {
+        margin-bottom: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.FooterItem_sublinks {
+    padding: 0.3rem;
+    font-size: $font__body--secondary;
+    display: block;
+    text-decoration: none;
+    color: $color__white;
+
+    &:hover {
+        color: $color__orange--secondary;
+        cursor: pointer;
+    }
+}
+
+.FooterItem_title {
+    margin: 1rem;
+}
