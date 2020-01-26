@@ -43,7 +43,6 @@
 .Header_item___title {
     margin-right: auto;
     display: flex;
-    align-items: center;
 
     &:hover {
         color: $color__white;
@@ -51,7 +50,6 @@
 }
 
 .Header_item___login {
-
     &:after {
         content: '|';
         display: inline-block;
@@ -69,27 +67,6 @@
     padding-left: 0.1rem;
 }
 
-.Header_title {
-    font-size: $font__title--secondary;
-    font-weight: bold;
-    margin-top: auto;
-    letter-spacing: 2px;
-
-    @include respond-to(screen-large) {
-        font-size: $font__title;
-        letter-spacing: 3px;
-    }
-}
-
-.Header_logo {
-    width: 2.8rem;
-    margin-right: 0.5rem;
-    
-    @include respond-to(screen-large) {
-        width: 3.5rem;
-    }
-}
-
 .Header_contact {
     display: flex;
     align-items: center;
@@ -102,11 +79,12 @@
 .Header_item___menuBar {
     display: flex;
 
-    &:active {
-        color: $color__orange--secondary;
+    &:hover {
+        color: $color__white;
     }
 
     @include respond-to(screen-large) {
         display: none;
     }
 }
+
