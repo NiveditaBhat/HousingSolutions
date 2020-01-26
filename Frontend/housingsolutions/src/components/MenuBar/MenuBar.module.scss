@@ -40,6 +40,10 @@
     &:last-child {
         border-bottom: 1px solid $color__grey;
     }
+
+    &:hover {
+        color: $color__orange--secondary;
+    }
 }
 
 .MenuBar_closeButton {
