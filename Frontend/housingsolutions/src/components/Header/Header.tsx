@@ -1,31 +1,46 @@
 import * as React from "react";
+
 import styles from "./Header.module.scss";
-import { ReactComponent as CompanyLogo } from "../../static/svgs/companylogo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MenuBar from "../MenuBar/MenuBar";
+import CompanyLogo from "../CompanyLogo/CompanyLogo";
+import useMedia from "../../utils/useMedia";
 
 interface IHeaderProps {}
 
 const Header: React.FunctionComponent<IHeaderProps> = props => {
+  const [menuBarStatus, toggleSideBar] = React.useState(false);
+  const isDesktop = useMedia("min-width:64em");
+
   return (
-    <header className={styles.Header}>
-      <ul className={styles.Header_items}>
-        <li className={`${styles.Header_item} ${styles.Header_item___title} `}>
-          <CompanyLogo className={styles.Header_logo} />
-          <span className={styles.Header_title}>HousingSolutions </span>
-        </li>
-        <li className={styles.Header_item}>
-          <section className={styles.Header_contact}>
-            <FontAwesomeIcon icon="phone-alt" className={styles.Header_phoneIcon} />
-            <span>call us - 01633 030040</span>
-          </section>
-        </li>
-        <li className={`${styles.Header_item} ${styles.Header_item___login}`}>Login</li>
-        <li className={`${styles.Header_item} ${styles.Header_item___register}`}>Register</li>
-        <li className={`${styles.Header_item} ${styles.Header_item___menuBar}`}>
-          <FontAwesomeIcon icon="bars" className={styles.Header_phoneIcon} />
-        </li>
-      </ul>
-    </header>
+    <>
+      <header className={styles.Header}>
+        <ul className={styles.Header_items}>
+          <li className={`${styles.Header_item} ${styles.Header_item___title} `}>
+            <CompanyLogo />
+          </li>
+          <li className={styles.Header_item}>
+            <section className={styles.Header_contact}>
+              <FontAwesomeIcon icon="phone-alt" className={styles.Header_phoneIcon} />
+              <span>call us - 01633 030040</span>
+            </section>
+          </li>
+          <li className={`${styles.Header_item} ${styles.Header_item___login}`}>Login</li>
+          <li className={`${styles.Header_item} ${styles.Header_item___register}`}>Register</li>
+          <li
+            className={`${styles.Header_item} ${styles.Header_item___menuBar}`}
+            onClick={() => toggleSideBar(!menuBarStatus)}
+          >
+            {!menuBarStatus ? (
+              <FontAwesomeIcon icon="bars" />
+            ) : (
+              <FontAwesomeIcon icon="window-close" className={styles.Header_closeIcon} size="lg" />
+            )}
+          </li>
+        </ul>
+      </header>
+      {!isDesktop && menuBarStatus && <MenuBar />}
+    </>
   );
 };
 
