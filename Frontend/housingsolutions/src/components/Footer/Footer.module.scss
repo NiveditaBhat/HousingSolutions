@@ -1,0 +1,37 @@
+@import '../../styles/config';
+
+.Footer {
+    display: flex;
+    background: $color__blue;
+    color: $color__white;
+    width: 100%;
+    flex-direction: column;
+}
+
+.Footer_mainLinks {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    width: 100%;
+
+    @include respond_to(screen-large) {
+        flex-direction: row;
+        padding: 1rem 0;
+        margin: 1rem 0;
+        justify-content: space-around;
+    }
+}
+
+.Footer_subFooter {
+    background: $color__blue--secondary;
+    padding: 1.3rem;
+    text-align: center;
+    font-size: $font__body;
+
+    &:hover {
+        color: $color__orange;
+        cursor: pointer;
+    }
+}
