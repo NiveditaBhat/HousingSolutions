@@ -1,0 +1,17 @@
+@import '../../styles/config';
+
+.SocialMediaLinks {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 2rem 1rem;
+}
+
+.SocialMediaLinks_item {
+    margin: 1rem 1.5rem;
+
+    &:hover {
+        color: $color__orange--secondary;
+        cursor: pointer;
+    }
+}
