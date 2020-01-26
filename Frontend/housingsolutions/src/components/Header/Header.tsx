@@ -38,8 +38,8 @@ const Header: React.FunctionComponent<IHeaderProps> = props => {
             )}
           </li>
         </ul>
+        {!isDesktop && menuBarStatus && <MenuBar />}
       </header>
-      {!isDesktop && menuBarStatus && <MenuBar />}
     </>
   );
 };
