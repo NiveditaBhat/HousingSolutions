@@ -11,13 +11,13 @@
     display: flex;
     width: 100%;
     margin: auto;
-    padding:0 1.5rem;
+    padding: 0 1.5rem;
     justify-content: flex-end;
     align-items: center;
     list-style: none;
     @include respond-to(screen-xl) {
         width: 80%;
-        padding:auto;
+        padding: auto;
     }
 }
 
@@ -27,7 +27,7 @@
 
     @include respond-to(screen-large) {
         display: block;
-  padding: 1.8rem 1.5rem;
+        padding: 1.8rem 1.5rem;
         &:last-child {
             margin-right: 3.3rem;
         }
@@ -94,9 +94,9 @@
     margin-right: 1rem;
 }
 
-.Header_item___menuBar{
-    display:flex;
+.Header_item___menuBar {
+    display: flex;
     @include respond-to(screen-large) {
-display:none;
+        display: none;
     }
 }
