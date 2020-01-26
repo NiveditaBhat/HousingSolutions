@@ -1,0 +1,32 @@
+@import '../../styles/config';
+
+.CompanyLogo {
+    display: flex;
+    align-items: center;
+    color: $color__white;
+
+    &:hover {
+        color: $color__white;
+    }
+}
+
+.CompanyLogo_icon {
+    width: 2.8rem;
+    margin-right: 0.5rem;
+
+    @include respond-to(screen-large) {
+        width: 3.5rem;
+    }
+}
+
+.CompanyLogo_title {
+    font-size: $font__title--secondary;
+    font-weight: bold;
+    margin-top: auto;
+    letter-spacing: 2px;
+
+    @include respond-to(screen-large) {
+        font-size: $font__title;
+        letter-spacing: 3px;
+    }
+}
