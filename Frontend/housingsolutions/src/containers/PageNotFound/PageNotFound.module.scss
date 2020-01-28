@@ -1,0 +1,57 @@
+@import '../../styles/config';
+
+.NotFound {
+    width: 100%;
+}
+
+.NotFound__errorIcon {
+    height: 90vh;
+}
+
+.NotFound_errorBlock {
+    display: flex;
+    justify-content: center;
+}
+
+.NotFound_titleBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 23vh;
+    padding: 3rem;
+    text-align: center;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.NotFound_title {
+    color: $color__blue;
+    font-size: 5rem;
+
+    @include respond_to(screen-medium) {
+        font-size: 8rem;
+    }
+}
+
+.NotFound_subTitle {
+    text-decoration: none;
+    font-size: $font__body;
+    color: $color__darkGrey;
+
+    @include respond_to(screen-medium) {
+        font-size: $font__title;
+    }
+}
+
+.NotFound_subTitle___link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color__blue;
+}
+
+.NoFound_linkText {
+    margin-left: 0.5rem;
+}
