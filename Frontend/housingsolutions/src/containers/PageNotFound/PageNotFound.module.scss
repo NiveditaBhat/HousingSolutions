@@ -50,6 +50,10 @@
     align-items: center;
     justify-content: center;
     color: $color__blue;
+
+    &:hover{
+        color:$color__orange;
+    }
 }
 
 .NoFound_linkText {
