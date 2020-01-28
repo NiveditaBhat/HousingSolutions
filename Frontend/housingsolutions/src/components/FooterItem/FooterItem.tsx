@@ -1,5 +1,6 @@
 import * as React from "react";
 import styles from "./FooterItem.module.scss";
+import { Link } from "react-router-dom";
 
 interface IFooterItemProps {
   title: string;
@@ -14,9 +15,9 @@ const FooterItem: React.FunctionComponent<IFooterItemProps> = ({
     <section className={styles.FooterItem}>
       <h4 className={styles.FooterItem_title}>{title}</h4>
       {subLinks.map(link => (
-        <a className={styles.FooterItem_sublinks} href="/">
+        <Link to="/" className={styles.FooterItem_sublinks}>
           {link}
-        </a>
+        </Link>
       ))}
     </section>
   );
