@@ -1,10 +1,21 @@
 import * as React from "react";
 import styles from "./HomePage.module.scss";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import IntroBlock from "../../components/IntroBlock/IntroBlock";
 
 interface IHomePageProps {}
 
 const HomePage: React.FunctionComponent<IHomePageProps> = props => {
-  return <section>main</section>;
+  return (
+    <section className={styles.Home}>
+      <Header />
+      <section className={styles.Home_container}>
+        <IntroBlock />
+      </section>
+      <Footer />
+    </section>
+  );
 };
 
 export default HomePage;
