@@ -1,0 +1,37 @@
+@import '../../styles/config';
+
+.Button {
+    padding: 0.5rem 1.5rem;
+    font-size: $font__body;
+    border-radius: 5px;
+    font-weight: 500;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.Button___primary {
+    background: $color__orange;
+    color: $color__white;
+
+    &:hover {
+        background: $color__orange--secondary;
+    }
+}
+
+.Button___secondary {
+    background: $color__grey;
+    color: $color__orange;
+    border: 2px solid $color__orange;
+    font-weight: 600;
+
+    &:hover {
+        color: $color__orange--secondary;
+        border: 2px solid $color__orange--secondary;
+    }
+}
