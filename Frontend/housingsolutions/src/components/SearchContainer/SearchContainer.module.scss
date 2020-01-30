@@ -1,0 +1,38 @@
+@import '../../styles/config/';
+
+.SearchContainer {
+    margin: auto;
+    padding: 2rem;
+    width: 60%;
+    display: grid;
+    grid-template-areas:
+        'countryBlock cityBlock searchBlock'
+        'priceBlock bedroomsBlock categoryBlock';
+    grid-gap: 1.3rem;
+    z-index: 1;
+    background: rgba(248, 248, 248, 0.781);
+}
+
+.SearchContainer_cityBlock {
+    grid-area: cityBlock;
+}
+
+.SearchContainer_countryBlock {
+    grid-area: countryBlock;
+}
+
+.SearchContainer_SearchBlock {
+    grid-area: searchBlock;
+}
+
+.SearchContainer_priceBlock {
+    grid-area: priceBlock;
+}
+
+.SearchContainer_bedroomsBlock {
+    grid-area: bedroomsBlock;
+}
+
+.SearchContainer_categoryBlock {
+    grid-area: categoryBlock;
+}
