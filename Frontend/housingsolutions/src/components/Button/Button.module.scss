@@ -3,8 +3,12 @@
 .Button {
     padding: 0.5rem 1.5rem;
     font-size: $font__body;
-    border-radius: 5px;
+    border-radius: 3px;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 
     &:hover {
         cursor: pointer;
@@ -33,5 +37,17 @@
     &:hover {
         color: $color__orange--secondary;
         border: 2px solid $color__orange--secondary;
+    }
+}
+
+.Button___default {
+    background: $color__grey;
+    border: 1px solid $color__grey--secondary;
+    color: $color__darkGrey--secondary;
+    border-radius: 0;
+
+    &:hover {
+        border: 1px solid darken($color__grey--secondary, 8%);
+        color: darken($color__darkGrey--secondary, 8%);
     }
 }
