@@ -6,9 +6,16 @@ import * as serviceWorker from "./serviceWorker";
 import App from "./containers/App/App";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faPhoneAlt, faBars, faWindowClose, faBackward } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhoneAlt,
+  faBars,
+  faWindowClose,
+  faBackward,
+  faChevronDown,
+  faChevronUp,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faPhoneAlt, faBars, faWindowClose, faBackward);
+library.add(fab, faPhoneAlt, faBars, faWindowClose, faBackward, faChevronDown, faChevronUp);
 ReactDOM.render(
   <Router>
     <App />
