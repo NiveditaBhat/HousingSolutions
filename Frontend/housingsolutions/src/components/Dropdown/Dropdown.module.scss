@@ -1,0 +1,27 @@
+@import '../../styles/config';
+
+.Dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.Dropdown_options {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    width: 99.4%;
+    top: 41%;
+    background: $color__grey;
+    border: 1px solid $color__grey--secondary;
+    color: $color__darkGrey--secondary;
+}
+
+.Dropdown_option {
+    padding: 0.9rem 1.3rem 0 0.9rem;
+
+    &:last-child {
+        padding-bottom: 0.7rem;
+    }
+}
