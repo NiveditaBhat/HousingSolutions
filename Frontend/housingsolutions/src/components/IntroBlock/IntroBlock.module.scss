@@ -17,14 +17,13 @@
 .IntroBlock_backgroundImage {
     display: block;
     height: 80%;
-    width:auto;
+    width: auto;
     object-fit: cover;
 
-    @include respond-to(screen-medium){
-           width: 100%;
-           height: auto;
+    @include respond-to(screen-medium) {
+        width: 100%;
+        height: auto;
     }
-    
 }
 
 .IntroBlock_wrapper {
