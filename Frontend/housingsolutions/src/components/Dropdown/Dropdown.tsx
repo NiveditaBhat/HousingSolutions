@@ -2,8 +2,9 @@ import * as React from "react";
 import styles from "./Dropdown.module.scss";
 import Button from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ClickOutside from "../ClickOutside/ClickOutside";
 
-interface IDropdownProps {
+interface DropdownProps {
   label: string;
   options: {
     key: string;
@@ -11,7 +12,7 @@ interface IDropdownProps {
   }[];
 }
 
-const Dropdown: React.FunctionComponent<IDropdownProps> = ({ label, options }) => {
+const Dropdown: React.FunctionComponent<DropdownProps> = ({ label, options }) => {
   const [toggle, setToggle] = React.useState(false);
 
   const handleToggle = React.useCallback(
@@ -23,20 +24,22 @@ const Dropdown: React.FunctionComponent<IDropdownProps> = ({ label, options }) =
   );
 
   return (
-    <section className={styles.Dropdown}>
-      <Button label={label} type={"default"} onClick={handleToggle}>
-        {toggle ? <FontAwesomeIcon icon="chevron-up" /> : <FontAwesomeIcon icon="chevron-down" />}
-      </Button>
-      {toggle && (
-        <ul className={styles.Dropdown_options}>
-          {options.map(option => (
-            <li className={styles.Dropdown_option} key={option.key}>
-              {option.value}
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
+    <ClickOutside onClickOutside={handleToggle}>
+      <section className={styles.Dropdown}>
+        <Button label={label} type={"default"} onClick={handleToggle}>
+          {toggle ? <FontAwesomeIcon icon="chevron-up" /> : <FontAwesomeIcon icon="chevron-down" />}
+        </Button>
+        {toggle && (
+          <ul className={styles.Dropdown_options}>
+            {options.map(option => (
+              <li className={styles.Dropdown_option} key={option.key}>
+                {option.value}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </ClickOutside>
   );
 };
 
