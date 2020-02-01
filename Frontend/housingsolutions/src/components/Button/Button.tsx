@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./Button.module.scss";
 
-interface IButtonProps {
+interface ButtonProps {
   label: string;
   type: "primary" | "secondary" | "default";
   onClick(event: React.MouseEvent<HTMLButtonElement>): void;
@@ -14,7 +14,7 @@ const buttonTypes = {
   default: "Button___default",
 };
 
-const Button: React.FunctionComponent<IButtonProps> = ({ onClick, label, children, type }) => {
+const Button: React.FunctionComponent<ButtonProps> = ({ onClick, label, children, type }) => {
   const buttonType = buttonTypes[type];
   return (
     <button className={`${styles.Button} ${styles[buttonType]}`} onClick={onClick}>
