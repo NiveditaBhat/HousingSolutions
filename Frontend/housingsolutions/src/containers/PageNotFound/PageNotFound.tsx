@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Header from "../../components/Header/Header";
 
-interface IPageNotFoundProps {}
-
-const PageNotFound: React.FunctionComponent<IPageNotFoundProps> = props => {
+const PageNotFound: React.FunctionComponent = () => {
   return (
     <section className={styles.NotFound}>
       <Header />

@@ -1,29 +1,29 @@
 import * as React from "react";
 import styles from "./SearchContainer.module.scss";
+import Dropdown from "../Dropdown/Dropdown";
 
-import Button from "../Button/Button";
-
-interface MyFormValues {
-  firstName: string;
-}
-
-interface ISearchContainerProps {}
-
-const SearchContainer: React.FunctionComponent<ISearchContainerProps> = props => {
-  const initialValues: MyFormValues = { firstName: "" };
+const SearchContainer: React.FunctionComponent = () => {
   return (
     <form>
       <section className={styles.SearchContainer}>
         <div className={styles.SearchContainer_cityBlock}>
-          <Button
-            label={"Search"}
-            type={"primary"}
-            onClick={() => {
-              alert("Boom");
-            }}
+          <Dropdown
+            label="Price"
+            options={[
+              { key: "one", value: "Furnished" },
+              { key: "two", value: "Unfurnished" },
+            ]}
           />
         </div>
-        <div className={styles.SearchContainer_countryBlock}>Country</div>
+        <div className={styles.SearchContainer_countryBlock}>
+          <Dropdown
+            label="country"
+            options={[
+              { key: "three", value: "Furnished" },
+              { key: "four", value: "Unfurnished" },
+            ]}
+          />
+        </div>
         <div className={styles.SearchContainer_titleBlock}>Search</div>
         <div className={styles.SearchContainer_priceBlock}>Price</div>
         <div className={styles.SearchContainer_bedroomsBlock}>Bedroom</div>

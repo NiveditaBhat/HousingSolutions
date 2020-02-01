@@ -4,9 +4,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import IntroBlock from "../../components/IntroBlock/IntroBlock";
 
-interface IHomePageProps {}
-
-const HomePage: React.FunctionComponent<IHomePageProps> = props => {
+const HomePage: React.FunctionComponent = () => {
   return (
     <section className={styles.Home}>
       <Header />

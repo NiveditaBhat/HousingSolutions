@@ -3,9 +3,7 @@ import styles from "./IntroBlock.module.scss";
 import houses from "../../static/images/houses3.jpg";
 import SearchContainer from "../SearchContainer/SearchContainer";
 
-interface IIntroBlockProps {}
-
-const IntroBlock: React.FunctionComponent<IIntroBlockProps> = props => {
+const IntroBlock: React.FunctionComponent = () => {
   return (
     <section className={styles.IntroBlock}>
       <div className={styles.IntroBlock_wrapper}>

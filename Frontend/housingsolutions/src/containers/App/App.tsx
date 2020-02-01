@@ -1,14 +1,10 @@
 import * as React from "react";
 import styles from "./App.module.scss";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import HomePage from "../HomePage/HomePage";
 import { Route, Switch } from "react-router-dom";
 import PageNotFound from "../PageNotFound/PageNotFound";
 
-interface IAppProps {}
-
-const App: React.FunctionComponent<IAppProps> = props => {
+const App: React.FunctionComponent = () => {
   return (
     <main className={styles.MainWrapper}>
       <Switch>

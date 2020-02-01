@@ -2,20 +2,20 @@ import * as React from "react";
 import styles from "./FooterItem.module.scss";
 import { Link } from "react-router-dom";
 
-interface IFooterItemProps {
+interface FooterItemProps {
   title: string;
   subLinks: Array<string>;
 }
 
-const FooterItem: React.FunctionComponent<IFooterItemProps> = ({
+const FooterItem: React.FunctionComponent<FooterItemProps> = ({
   title,
   subLinks,
-}: IFooterItemProps) => {
+}: FooterItemProps) => {
   return (
     <section className={styles.FooterItem}>
       <h4 className={styles.FooterItem_title}>{title}</h4>
       {subLinks.map(link => (
-        <Link to="/" className={styles.FooterItem_sublinks}>
+        <Link key={link} to="/" className={styles.FooterItem_sublinks}>
           {link}
         </Link>
       ))}

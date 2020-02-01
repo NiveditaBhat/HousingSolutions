@@ -8,7 +8,7 @@ const useMedia = (query: string, defaultState = false): boolean => {
   useEffect(() => {
     let mounted = true;
     const mql = target.matchMedia(query);
-    const onChange = () => {
+    const onChange = (): void => {
       if (!mounted) {
         return;
       }
@@ -18,7 +18,7 @@ const useMedia = (query: string, defaultState = false): boolean => {
     mql.addListener(onChange);
     setState(mql.matches);
 
-    return () => {
+    return (): void => {
       mounted = false;
       mql.removeListener(onChange);
     };

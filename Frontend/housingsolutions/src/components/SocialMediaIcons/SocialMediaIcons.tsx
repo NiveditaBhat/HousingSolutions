@@ -2,9 +2,7 @@ import * as React from "react";
 import styles from "./SocialMediaIcons.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface ISocialMediaIconsProps {}
-
-const SocialMediaIcons: React.FunctionComponent<ISocialMediaIconsProps> = props => {
+const SocialMediaIcons: React.FunctionComponent = () => {
   return (
     <section className={styles.SocialMediaLinks}>
       <FontAwesomeIcon

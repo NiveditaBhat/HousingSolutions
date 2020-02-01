@@ -1,9 +1,7 @@
 import * as React from "react";
 import styles from "./MenuBar.module.scss";
 
-interface IMenuBarProps {}
-
-const MenuBar: React.FunctionComponent<IMenuBarProps> = props => {
+const MenuBar: React.FunctionComponent = () => {
   return (
     <section className={styles.MenuBar}>
       <ul className={styles.MenuBar_items}>

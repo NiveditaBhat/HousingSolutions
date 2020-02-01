@@ -6,9 +6,7 @@ import MenuBar from "../MenuBar/MenuBar";
 import CompanyLogo from "../CompanyLogo/CompanyLogo";
 import useMedia from "../../utils/useMedia";
 
-interface IHeaderProps {}
-
-const Header: React.FunctionComponent<IHeaderProps> = props => {
+const Header: React.FunctionComponent = () => {
   const [menuBarStatus, toggleSideBar] = React.useState(false);
   const isDesktop = useMedia("min-width:64em");
 

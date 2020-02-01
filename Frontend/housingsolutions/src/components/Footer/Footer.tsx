@@ -3,9 +3,7 @@ import styles from "./Footer.module.scss";
 import FooterItem from "../FooterItem/FooterItem";
 import SocialMediaIcons from "../SocialMediaIcons/SocialMediaIcons";
 
-interface IFooterProps {}
-
-const Footer: React.FunctionComponent<IFooterProps> = props => {
+const Footer: React.FunctionComponent = () => {
   const footerlinks = [
     {
       title: "Get Started",
@@ -29,7 +27,11 @@ const Footer: React.FunctionComponent<IFooterProps> = props => {
     <footer className={styles.Footer}>
       <section className={styles.Footer_mainLinks}>
         {footerlinks.map(footerLink => (
-          <FooterItem title={footerLink.title} subLinks={footerLink.subLinks} />
+          <FooterItem
+            key={footerLink.title}
+            title={footerLink.title}
+            subLinks={footerLink.subLinks}
+          />
         ))}
       </section>
       <SocialMediaIcons />
