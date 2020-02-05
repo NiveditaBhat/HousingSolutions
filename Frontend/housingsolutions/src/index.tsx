@@ -13,9 +13,19 @@ import {
   faBackward,
   faChevronDown,
   faChevronUp,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faPhoneAlt, faBars, faWindowClose, faBackward, faChevronDown, faChevronUp);
+library.add(
+  fab,
+  faPhoneAlt,
+  faBars,
+  faWindowClose,
+  faBackward,
+  faChevronDown,
+  faChevronUp,
+  faSearch
+);
 ReactDOM.render(
   <Router>
     <App />
