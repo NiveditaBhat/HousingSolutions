@@ -20,8 +20,17 @@ const Dropdown: React.FunctionComponent<DropdownProps> = ({ label, options }) =>
     [toggle]
   );
 
+  // close dropdown only if its open
+  const handleClickOutside = React.useCallback(
+    e => {
+      e.preventDefault();
+      if (toggle) setToggle(!toggle);
+    },
+    [toggle]
+  );
+
   return (
-    <ClickOutside onClickOutside={handleToggle}>
+    <ClickOutside onClickOutside={handleClickOutside}>
       <section className={styles.Dropdown}>
         <Button
           label={label}
