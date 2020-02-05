@@ -1,11 +1,13 @@
 import * as React from "react";
 import styles from "./Button.module.scss";
+import classNames from "classnames";
 
 interface ButtonProps {
   label: string;
   type: "primary" | "secondary" | "default";
   onClick(event: React.MouseEvent<HTMLButtonElement>): void;
   children?: React.ReactNode | null | undefined;
+  extraClasses?: string[];
 }
 
 const buttonTypes = {
@@ -14,10 +16,19 @@ const buttonTypes = {
   default: "Button___default",
 };
 
-const Button: React.FunctionComponent<ButtonProps> = ({ onClick, label, children, type }) => {
+const Button: React.FunctionComponent<ButtonProps> = ({
+  onClick,
+  label,
+  children,
+  type,
+  extraClasses,
+}) => {
   const buttonType = buttonTypes[type];
   return (
-    <button className={`${styles.Button} ${styles[buttonType]}`} onClick={onClick}>
+    <button
+      onClick={onClick}
+      className={classNames(styles.Button, styles[buttonType], extraClasses)}
+    >
       <span>{label}</span>
       {children}
     </button>
