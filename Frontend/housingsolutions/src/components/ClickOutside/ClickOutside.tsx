@@ -12,7 +12,7 @@ const useClickOutside = (ref: HTMLDivElement | null, onClickOutside: Function): 
         onClickOutside(event);
       }
     },
-    [ref]
+    [ref, onClickOutside]
   );
 
   React.useEffect(() => {
