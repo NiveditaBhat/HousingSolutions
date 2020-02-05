@@ -5,23 +5,33 @@
     width: 100%;
 }
 
+.Dropdown_button {
+    height: 4.3rem;
+}
+
 .Dropdown_options {
     position: absolute;
     display: flex;
     flex-direction: column;
     list-style-type: none;
     padding: 0;
-    width: 99.4%;
-    top: 41%;
+    width: 100%;
+    box-sizing: border-box;
+    top: 60%;
+    z-index: 2;
     background: $color__grey;
     border: 1px solid $color__grey--secondary;
     color: $color__darkGrey--secondary;
 }
 
 .Dropdown_option {
-    padding: 0.9rem 1.3rem 0 0.9rem;
+    padding: 0.9rem 1.3rem 0 1.3rem;
 
     &:last-child {
         padding-bottom: 0.7rem;
     }
+}
+
+.Dropdown_chevron > path {
+    fill: $color__grey--secondary;
 }
