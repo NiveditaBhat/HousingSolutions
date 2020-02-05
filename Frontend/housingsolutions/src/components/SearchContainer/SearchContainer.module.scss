@@ -2,27 +2,62 @@
 
 .SearchContainer {
     margin: auto;
-    padding: 2rem;
-    width: 60%;
+    padding: 1rem;
+    width: auto;
     display: grid;
     grid-template-areas:
-        'countryBlock cityBlock searchBlock'
-        'priceBlock bedroomsBlock categoryBlock';
-    grid-gap: 1.3rem;
+        'titleBlock titleBlock'
+        'cityBlock cityBlock'
+        'priceBlock interiorBlock'
+        'categoryBlock bedroomsBlock'
+        'buttonBlock buttonBlock';
+    grid-gap: 0.5rem;
     z-index: 1;
     background: rgba(248, 248, 248, 0.781);
+
+    @include respond-to('screen-small-landscape') {
+        width: 75%;
+    }
+
+    @include respond-to(screen-medium) {
+        width: 65%;
+        padding: 2rem;
+        grid-gap: 1.3rem;
+        grid-template-areas:
+            'titleBlock titleBlock titleBlock titleBlock'
+            'cityBlock cityBlock cityBlock buttonBlock'
+            'priceBlock interiorBlock categoryBlock bedroomsBlock';
+    }
+
+    @include respond-to(screen-large) {
+        width: 50%;
+        //  grid-template-columns: 1fr 2fr 2fr 1.2fr;
+    }
+
+    .SearchContainer_searchButton {
+        height: 4.3rem;
+        justify-content: center;
+
+        @include respond-to(screen-medium) {
+            justify-content: space-between;
+        }
+    }
 }
 
 .SearchContainer_cityBlock {
     grid-area: cityBlock;
 }
 
-.SearchContainer_countryBlock {
-    grid-area: countryBlock;
+.SearchContainer_titleBlock {
+    grid-area: titleBlock;
 }
 
-.SearchContainer_SearchBlock {
-    grid-area: searchBlock;
+.SearchContainer_interiorBlock {
+    grid-area: interiorBlock;
+}
+
+.SearchContainer_buttonBlock {
+    grid-area: buttonBlock;
 }
 
 .SearchContainer_priceBlock {
@@ -35,4 +70,11 @@
 
 .SearchContainer_categoryBlock {
     grid-area: categoryBlock;
+}
+
+.SearchContainer_title {
+    margin: 0.5rem;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid $color__orange;
 }
