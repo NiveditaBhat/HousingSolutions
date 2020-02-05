@@ -8,7 +8,7 @@ import useMedia from "../../utils/useMedia";
 
 const Header: React.FunctionComponent = () => {
   const [menuBarStatus, toggleSideBar] = React.useState(false);
-  const isDesktop = useMedia("min-width:64em");
+  const isDesktop = useMedia("(min-width:64em)");
 
   return (
     <>

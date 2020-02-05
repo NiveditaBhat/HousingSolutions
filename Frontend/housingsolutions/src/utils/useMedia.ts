@@ -22,7 +22,7 @@ const useMedia = (query: string, defaultState = false): boolean => {
       mounted = false;
       mql.removeListener(onChange);
     };
-  }, [query]);
+  }, [query, target]);
 
   return state;
 };
