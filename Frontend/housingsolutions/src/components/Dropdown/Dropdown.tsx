@@ -1,8 +1,5 @@
 import * as React from "react";
 import styles from "./Dropdown.module.scss";
-import Button from "../Button/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ClickOutside from "../ClickOutside/ClickOutside";
 
 interface DropdownProps {
   label: string;
