@@ -2,15 +2,24 @@ import * as React from "react";
 import styles from "./Dropdown.module.scss";
 
 interface DropdownProps {
-  label: string;
+  defaultLabel: string;
   options: string[];
+  onOptionsClicked(option: string): void | undefined;
 }
 
-const Dropdown: React.FunctionComponent<DropdownProps> = ({ label, options }) => {
+const Dropdown: React.FunctionComponent<DropdownProps> = ({
+  defaultLabel,
+  options,
+  onOptionsClicked,
+}) => {
   return (
     <ul className={styles.Dropdown}>
       {options.map((option, i) => (
-        <li className={styles.Dropdown_option} key={label + i}>
+        <li
+          className={styles.Dropdown_option}
+          key={defaultLabel + i}
+          onClick={() => onOptionsClicked(option)}
+        >
           {option}
         </li>
       ))}
