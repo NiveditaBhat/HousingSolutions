@@ -15,7 +15,7 @@ const SearchContainer: React.FunctionComponent = () => {
           <span className={styles.SearchContainer_title}>Find your Rental Property now</span>
         </div>
         <div className={styles.SearchContainer_cityBlock}>
-          <Select label="Country" options={["Furnished", "Unfurnished"]} />
+          <Select defaultLabel="Country" options={["No Preference", "Furnished", "Unfurnished"]} />
         </div>
         <div className={styles.SearchContainer_buttonBlock}>
           <Button
@@ -29,18 +29,33 @@ const SearchContainer: React.FunctionComponent = () => {
         </div>
         <div className={styles.SearchContainer_priceBlock}>
           <Select
-            label="Price"
-            options={["> €500", "> €1000", "> €2000", "> €3000", "> €4000", "> €5000", "> €7000"]}
+            defaultLabel="Price"
+            options={[
+              "No Preference",
+              "> €500",
+              "> €1000",
+              "> €2000",
+              "> €3000",
+              "> €4000",
+              "> €5000",
+              "> €7000",
+            ]}
           />
         </div>
         <div className={styles.SearchContainer_bedroomsBlock}>
-          <Select label="Bedrooms" options={["1", "2", "3", "4", "5"]} />
+          <Select defaultLabel="Bedrooms" options={["No Preference", "1", "2", "3", "4", "5"]} />
         </div>
         <div className={styles.SearchContainer_interiorBlock}>
-          <Select label="Interior" options={["Furnished", "Unfurnished", "Semi-furnished"]} />
+          <Select
+            defaultLabel="Interior"
+            options={["No Preference", "Furnished", "Unfurnished", "Semi-furnished"]}
+          />
         </div>
         <div className={styles.SearchContainer_categoryBlock}>
-          <Select label="Category" options={["Apartment", "Room", "Bungalow", "House"]} />
+          <Select
+            defaultLabel="Category"
+            options={["No Preference", "Apartment", "Room", "Bungalow", "House"]}
+          />
         </div>
       </section>
     </form>
