@@ -16,10 +16,16 @@
 }
 
 .Dropdown_option {
-    padding: 0.9rem 1.3rem 0 1.3rem;
+    padding: 1rem;
+    border: 1px solid $color__grey;
+
+    &:hover{
+        cursor: pointer;
+        border: 1px solid darken($color__grey,6%);
+        background:darken($color__grey,6%);
+    }
 
     &:last-child {
         padding-bottom: 0.7rem;
     }
 }
-
