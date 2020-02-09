@@ -10,51 +10,14 @@ interface DropdownProps {
 }
 
 const Dropdown: React.FunctionComponent<DropdownProps> = ({ label, options }) => {
-  const [toggle, setToggle] = React.useState(false);
-
-  const handleToggle = React.useCallback(
-    e => {
-      e.preventDefault();
-      setToggle(!toggle);
-    },
-    [toggle]
-  );
-
-  // close dropdown only if its open
-  const handleClickOutside = React.useCallback(
-    e => {
-      e.preventDefault();
-      if (toggle) setToggle(!toggle);
-    },
-    [toggle]
-  );
-
   return (
-    <ClickOutside onClickOutside={handleClickOutside}>
-      <section className={styles.Dropdown}>
-        <Button
-          label={label}
-          type={"default"}
-          onClick={handleToggle}
-          extraClasses={[styles.Dropdown_button]}
-        >
-          {toggle ? (
-            <FontAwesomeIcon icon="chevron-up" className={styles.Dropdown_chevron} />
-          ) : (
-            <FontAwesomeIcon icon="chevron-down" className={styles.Dropdown_chevron} />
-          )}
-        </Button>
-        {toggle && (
-          <ul className={styles.Dropdown_options}>
-            {options.map((option, i) => (
-              <li className={styles.Dropdown_option} key={label + i}>
-                {option}
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
-    </ClickOutside>
+    <ul className={styles.Dropdown}>
+      {options.map((option, i) => (
+        <li className={styles.Dropdown_option} key={label + i}>
+          {option}
+        </li>
+      ))}
+    </ul>
   );
 };
 

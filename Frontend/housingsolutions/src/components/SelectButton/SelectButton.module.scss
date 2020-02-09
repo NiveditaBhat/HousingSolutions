@@ -1,0 +1,9 @@
+@import '../../styles/config';
+
+.SelectButton {
+    height: 4.3rem;
+}
+
+.SelectButton_chevron > path {
+    fill: $color__grey--secondary;
+}

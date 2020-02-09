@@ -1,15 +1,6 @@
 @import '../../styles/config';
 
 .Dropdown {
-    position: relative;
-    width: 100%;
-}
-
-.Dropdown_button {
-    height: 4.3rem;
-}
-
-.Dropdown_options {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -32,6 +23,3 @@
     }
 }
 
-.Dropdown_chevron > path {
-    fill: $color__grey--secondary;
-}
