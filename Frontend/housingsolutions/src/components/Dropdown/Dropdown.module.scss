@@ -13,16 +13,18 @@
     background: $color__grey;
     border: 1px solid $color__grey--secondary;
     color: $color__darkGrey--secondary;
+    max-height: 25rem;
+    overflow-y: auto;
 }
 
 .Dropdown_option {
     padding: 1rem;
     border: 1px solid $color__grey;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
-        border: 1px solid darken($color__grey,6%);
-        background:darken($color__grey,6%);
+        border: 1px solid darken($color__grey, 6%);
+        background: darken($color__grey, 6%);
     }
 
     &:last-child {

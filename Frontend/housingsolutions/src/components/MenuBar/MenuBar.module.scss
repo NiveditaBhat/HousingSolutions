@@ -10,8 +10,8 @@
     overflow-x: hidden;
     transition: 0.5s;
     margin-top: 5.6rem;
-    background: $color__white;
-    box-shadow: 0px 4px 6px $color__grey;
+    background: lighten($color__grey, 4%);
+    box-shadow: 0 0.25rem 0.625rem 0 rgba(0, 0, 0, 0.2);
 }
 
 .MenuBar_header {
@@ -28,13 +28,13 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    color: $color__blue;
+    color: $color__darkGrey--secondary;
     display: block;
     transition: 0.3s;
 }
 
 .MenuBar_item {
-    padding: 1rem 1.4rem;
+    padding: 1.2rem 1.4rem;
     border-top: 1px solid $color__grey;
 
     &:last-child {
@@ -42,7 +42,7 @@
     }
 
     &:hover {
-        color: $color__orange--secondary;
+        background: darken($color__grey, 2%);
     }
 }
 

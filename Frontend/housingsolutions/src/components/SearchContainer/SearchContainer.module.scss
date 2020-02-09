@@ -11,6 +11,7 @@
         'priceBlock interiorBlock'
         'categoryBlock bedroomsBlock'
         'buttonBlock buttonBlock';
+
     grid-gap: 0.5rem;
     z-index: 1;
     background: rgba(248, 248, 248, 0.781);
@@ -20,18 +21,19 @@
     }
 
     @include respond-to(screen-medium) {
-        width: 65%;
+        width: 90%;
         padding: 2rem;
         grid-gap: 1.3rem;
         grid-template-areas:
             'titleBlock titleBlock titleBlock titleBlock'
             'cityBlock cityBlock cityBlock buttonBlock'
             'priceBlock interiorBlock categoryBlock bedroomsBlock';
+        grid-template-columns: 24% 24% 24% auto;
     }
 
     @include respond-to(screen-large) {
         width: 50%;
-        //  grid-template-columns: 1fr 2fr 2fr 1.2fr;
+        grid-template-columns: 24% 24% 24% auto;
     }
 
     .SearchContainer_searchButton {

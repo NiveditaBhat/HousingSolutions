@@ -32,7 +32,7 @@ const Header: React.FunctionComponent = () => {
             {!menuBarStatus ? (
               <FontAwesomeIcon icon="bars" />
             ) : (
-              <FontAwesomeIcon icon="window-close" className={styles.Header_closeIcon} size="lg" />
+              <FontAwesomeIcon icon="times" className={styles.Header_closeIcon} size="lg" />
             )}
           </li>
         </ul>
