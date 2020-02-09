@@ -14,6 +14,7 @@ import {
   faChevronDown,
   faChevronUp,
   faSearch,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -24,7 +25,8 @@ library.add(
   faBackward,
   faChevronDown,
   faChevronUp,
-  faSearch
+  faSearch,
+  faTimes
 );
 ReactDOM.render(
   <Router>
