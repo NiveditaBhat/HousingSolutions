@@ -1,0 +1,48 @@
+{
+    "city":[
+        "Amsterdam",
+        "Rotterdam",
+        "The Hague",
+        "Utrecht",
+        "Eindhoven",
+        "Tilburg",
+        "Groningen",
+        "Almere Stad",
+        "Breda",
+        "Nijmegen",
+        "Enschede",
+        "Haarlem"
+    ],
+    "price":[
+        "No Preference",
+        "> €500",
+        "> €1000",
+        "> €2000",
+        "> €3000",
+        "> €4000",
+        "> €5000",
+        "> €7000"
+    ],
+    "bedrooms":[
+        "No Preference", 
+        "1", 
+        "2", 
+        "3", 
+        "4", 
+        "5"
+    ],
+    "interior":[
+        "No Preference", 
+        "Furnished", 
+        "Unfurnished", 
+        "Semi-furnished"
+    ],
+    "category":[
+        "No Preference", 
+        "Apartment", 
+        "Room", 
+        "Bungalow", 
+        "House"
+    ]
+}
+
