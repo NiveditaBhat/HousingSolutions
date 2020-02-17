@@ -4,6 +4,8 @@ import Select from "../Select/Select";
 import Button from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useMedia from "../../utils/useMedia";
+import SearchBar from "../SearchBar/SearchBar";
+import SearchOptions from "../../utils/Search.settings.json";
 
 const SearchContainer: React.FunctionComponent = () => {
   const isTablet = useMedia("(min-width:48em)");
@@ -15,7 +17,7 @@ const SearchContainer: React.FunctionComponent = () => {
           <span className={styles.SearchContainer_title}>Find your Rental Property now</span>
         </div>
         <div className={styles.SearchContainer_cityBlock}>
-          <Select defaultLabel="Country" options={["No Preference", "Furnished", "Unfurnished"]} />
+          <SearchBar suggestions={SearchOptions.city} />
         </div>
         <div className={styles.SearchContainer_buttonBlock}>
           <Button
@@ -28,34 +30,16 @@ const SearchContainer: React.FunctionComponent = () => {
           </Button>
         </div>
         <div className={styles.SearchContainer_priceBlock}>
-          <Select
-            defaultLabel="Price"
-            options={[
-              "No Preference",
-              "> €500",
-              "> €1000",
-              "> €2000",
-              "> €3000",
-              "> €4000",
-              "> €5000",
-              "> €7000",
-            ]}
-          />
+          <Select defaultLabel="Price" options={SearchOptions.price} />
         </div>
         <div className={styles.SearchContainer_bedroomsBlock}>
-          <Select defaultLabel="Bedrooms" options={["No Preference", "1", "2", "3", "4", "5"]} />
+          <Select defaultLabel="Bedrooms" options={SearchOptions.bedrooms} />
         </div>
         <div className={styles.SearchContainer_interiorBlock}>
-          <Select
-            defaultLabel="Interior"
-            options={["No Preference", "Furnished", "Unfurnished", "Semi-furnished"]}
-          />
+          <Select defaultLabel="Interior" options={SearchOptions.interior} />
         </div>
         <div className={styles.SearchContainer_categoryBlock}>
-          <Select
-            defaultLabel="Category"
-            options={["No Preference", "Apartment", "Room", "Bungalow", "House"]}
-          />
+          <Select defaultLabel="Category" options={SearchOptions.category} />
         </div>
       </section>
     </form>
