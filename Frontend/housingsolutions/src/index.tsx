@@ -6,6 +6,9 @@ import * as serviceWorker from "./serviceWorker";
 import App from "./containers/App/App";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import { client } from "../src/utils/useClient";
+import { ApolloProvider } from "@apollo/react-hooks";
+
 import {
   faPhoneAlt,
   faBars,
@@ -28,9 +31,12 @@ library.add(
   faSearch,
   faTimes
 );
+
 ReactDOM.render(
   <Router>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </Router>,
   document.getElementById("root")
 );
