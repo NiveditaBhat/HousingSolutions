@@ -51,13 +51,7 @@ const Select: React.FunctionComponent<SelectProps> = ({ defaultLabel, options })
     <section className={styles.Select}>
       <SelectButton label={label} handleToggle={handleToggle} toggle={toggle} />
       {isDesktop
-        ? toggle && (
-            <Dropdown
-              defaultLabel={defaultLabel}
-              options={updatedOptions}
-              onOptionsClicked={handleOptionsClick}
-            />
-          )
+        ? toggle && <Dropdown options={updatedOptions} onOptionsClicked={handleOptionsClick} />
         : toggle && (
             <Popup
               label={defaultLabel}
