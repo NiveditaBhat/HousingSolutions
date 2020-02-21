@@ -31,12 +31,12 @@
 .Button___secondary {
     background: $color__grey;
     color: $color__orange;
-    border: 2px solid $color__orange;
+    border: 1px solid $color__orange;
     font-weight: 600;
 
     &:hover {
         color: $color__orange--secondary;
-        border: 2px solid $color__orange--secondary;
+        border: 1px solid $color__orange--secondary;
     }
 }
 
