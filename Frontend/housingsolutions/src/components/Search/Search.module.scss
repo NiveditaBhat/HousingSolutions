@@ -1,0 +1,82 @@
+@import '../../styles/config/';
+
+.Search {
+    margin: auto;
+    padding: 1rem;
+    width: auto;
+    display: grid;
+    grid-template-areas:
+        'titleBlock titleBlock'
+        'cityBlock cityBlock'
+        'priceBlock interiorBlock'
+        'categoryBlock bedroomsBlock'
+        'buttonBlock buttonBlock';
+
+    grid-gap: 0.5rem;
+    z-index: 1;
+    background: rgba(248, 248, 248, 0.781);
+
+    @include respond-to('screen-small-landscape') {
+        width: 75%;
+    }
+
+    @include respond-to(screen-medium) {
+        width: 90%;
+        padding: 2rem;
+        grid-gap: 1.3rem;
+        grid-template-areas:
+            'titleBlock titleBlock titleBlock titleBlock'
+            'cityBlock cityBlock cityBlock buttonBlock'
+            'priceBlock interiorBlock categoryBlock bedroomsBlock';
+        grid-template-columns: 24% 24% 24% auto;
+    }
+
+    @include respond-to(screen-large) {
+        width: 50%;
+        grid-template-columns: 24% 24% 24% auto;
+    }
+
+    .Search_searchButton {
+        height: 4.3rem;
+        justify-content: center;
+
+        @include respond-to(screen-medium) {
+            justify-content: space-between;
+        }
+    }
+}
+
+.Search_cityBlock {
+    grid-area: cityBlock;
+}
+
+.Search_titleBlock {
+    grid-area: titleBlock;
+}
+
+.Search_interiorBlock {
+    grid-area: interiorBlock;
+}
+
+.Search_buttonBlock {
+    grid-area: buttonBlock;
+}
+
+.Search_priceBlock {
+    grid-area: priceBlock;
+}
+
+.Search_bedroomsBlock {
+    grid-area: bedroomsBlock;
+}
+
+.Search_categoryBlock {
+    grid-area: categoryBlock;
+}
+
+.Search_title {
+    margin: 0.5rem;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid $color__orange;
+}
