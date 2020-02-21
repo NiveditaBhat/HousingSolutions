@@ -8,6 +8,8 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { client } from "../src/utils/useClient";
 import { ApolloProvider } from "@apollo/react-hooks";
+import store from "./utils/configureStore";
+import { Provider } from "react-redux";
 
 import {
   faPhoneAlt,
@@ -18,6 +20,9 @@ import {
   faChevronUp,
   faSearch,
   faTimes,
+  faBed,
+  faBath,
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -29,13 +34,18 @@ library.add(
   faChevronDown,
   faChevronUp,
   faSearch,
-  faTimes
+  faTimes,
+  faBed,
+  faBath,
+  faMapMarkerAlt
 );
 
 ReactDOM.render(
   <Router>
     <ApolloProvider client={client}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </ApolloProvider>
   </Router>,
   document.getElementById("root")
