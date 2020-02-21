@@ -1,0 +1,35 @@
+@import '../../styles/config';
+
+.SearchResults {
+    margin: auto;
+    width: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: $color__grey;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    @include respond-to(screen-medium) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    @include respond-to(screen-xl) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 3rem;
+        padding: 2rem 8rem;
+    }
+}
+
+.SearchResults_anchor {
+    text-decoration: none;
+    color: black;
+    padding: 1rem 0;
+
+    @include respond-to(screen-medium) {
+        padding: 0;
+    }
+}
