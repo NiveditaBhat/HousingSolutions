@@ -16,7 +16,8 @@ interface IconProps {
     | "times"
     | "bed"
     | "bath"
-    | "map-marker-alt";
+    | "map-marker-alt"
+    | "chair";
   extraClasses?: string[];
 }
 

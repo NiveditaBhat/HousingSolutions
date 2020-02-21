@@ -32,7 +32,7 @@ const Property: React.FunctionComponent<PropertyProps> = ({ property }) => {
             text={`${property.bedroom}  Bedroom`}
             extraClasses={[styles.Property_bedroom]}
           />
-          <Icon name={"bath"} text={interiorType} />
+          <Icon name={"chair"} text={interiorType} />
         </div>
         <div className={styles.Property_rent}>€{property.propertyPrice?.rent}/month</div>
       </footer>
