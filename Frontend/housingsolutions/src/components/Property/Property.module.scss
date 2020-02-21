@@ -1,0 +1,66 @@
+@import '../../styles/config/';
+
+.Property {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lighten($color__grey--secondary, 10%);
+    border-radius: 5px;
+    background: $color__white;
+    box-sizing: border-box;
+}
+
+.Property_header {
+    display: flex;
+    flex-direction: column;
+
+    .Property_img {
+        object-fit: cover;
+        height: 25rem;
+        border-radius: 5px;
+    }
+}
+
+.Property_title {
+    padding: 1.7rem;
+
+    .Property_name {
+        margin: 0;
+        padding: 1rem 0;
+    }
+}
+
+.Property_location {
+    font-weight: bold;
+    color: lighten($color__darkGrey, 20%);
+}
+
+.Property_footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid lighten($color__grey--secondary, 7%);
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.Property_features {
+    display: flex;
+    justify-content: flex-start;
+    color: lighten($color__darkGrey, 20%);
+    padding: 1.7rem 0;
+    font-size: $font__body--secondary;
+    text-transform: capitalize;
+}
+
+.Property_rent {
+    font-size: $font__title--secondary;
+    font-weight: bold;
+}
+
+.Property_bedroom {
+    margin-right: 4rem;
+}
+
+.Property_moreInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
