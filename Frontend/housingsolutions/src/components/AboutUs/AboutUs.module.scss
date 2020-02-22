@@ -1,0 +1,40 @@
+@import '../../styles/config';
+
+.AboutUs{
+    display:flex;
+    padding:5rem 6rem;
+    flex-direction: column;
+    color:$color__darkGrey--secondary;
+}
+
+.AboutUs_section{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+  align-items:center;
+}
+
+.AboutUs_info{
+  padding:0 2rem;
+  font-size: $font__title--secondary;
+}
+
+.AboutUs_infoList{
+    border-spacing: 1.2rem;
+}
+
+.AboutUs_title{
+    text-align: center;
+
+    span{
+        text-align: center;
+        font-size:3rem;
+    }
+  
+}
+
+.AboutUs_img{
+    height:35rem;
+
+}
+
