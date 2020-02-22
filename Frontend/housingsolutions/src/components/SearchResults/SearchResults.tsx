@@ -11,8 +11,8 @@ const SearchResults: React.FunctionComponent<SearchResultsProps> = ({ properties
   return (
     <section className={styles.SearchResults}>
       {properties.map(property => (
-        <a href="#" className={styles.SearchResults_anchor}>
-          <Property key={property.id} property={property} />
+        <a href="#" key={property.id} className={styles.SearchResults_anchor}>
+          <Property property={property} />
         </a>
       ))}
     </section>
