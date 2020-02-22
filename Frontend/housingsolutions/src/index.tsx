@@ -23,6 +23,14 @@ import {
   faBed,
   faBath,
   faMapMarkerAlt,
+  faChair,
+  faHome,
+  faCheckSquare,
+  faPlus,
+  faPiggyBank,
+  faCalendarPlus,
+  faHandshake,
+  faUserClock,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -37,7 +45,15 @@ library.add(
   faTimes,
   faBed,
   faBath,
-  faMapMarkerAlt
+  faMapMarkerAlt,
+  faChair,
+  faPlus,
+  faCheckSquare,
+  faHome,
+  faPiggyBank,
+  faCalendarPlus,
+  faHandshake,
+  faUserClock
 );
 
 ReactDOM.render(
