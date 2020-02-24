@@ -1,14 +1,14 @@
 @import '../../styles/config';
 
-.CompanyStats{   
-    background:$color__blue;
-    padding:3rem 0;
+.CompanyStats {
+    background: $color__blue;
+    padding: 3rem 0;
 }
 
-.CompanyStats_wrapper{
-   width:80%;
-    margin:auto;
-    display:flex;
+.CompanyStats_wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }

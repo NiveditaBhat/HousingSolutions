@@ -1,40 +1,37 @@
 @import '../../styles/config';
 
-.AboutUs{
-    display:flex;
-    padding:5rem 6rem;
+.AboutUs {
+    display: flex;
+    padding: 5rem 6rem 8rem 6rem;
     flex-direction: column;
-    color:$color__darkGrey--secondary;
+    color: $color__darkGrey--secondary;
 }
 
-.AboutUs_section{
-    display:flex;
-    width:100%;
+.AboutUs_section {
+    display: flex;
+    width: 100%;
     justify-content: space-between;
-  align-items:center;
+    align-items: center;
 }
 
-.AboutUs_info{
-  padding:0 2rem;
-  font-size: $font__title--secondary;
+.AboutUs_info {
+    padding: 0 2rem;
+    font-size: $font__title--secondary;
 }
 
-.AboutUs_infoList{
+.AboutUs_infoList {
     border-spacing: 1.2rem;
 }
 
-.AboutUs_title{
+.AboutUs_title {
     text-align: center;
 
-    span{
+    span {
         text-align: center;
-        font-size:3rem;
+        font-size: 3rem;
     }
-  
 }
 
-.AboutUs_img{
-    height:35rem;
-
+.AboutUs_img {
+    height: 35rem;
 }
-
