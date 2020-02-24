@@ -16,21 +16,22 @@
 
 .SearchContainer_backgroundImage {
     display: block;
-    height: 80%;
-    width: auto;
+    height: 60%;
     object-fit: cover;
 
     @include respond-to(screen-medium) {
         width: 100%;
-        height: auto;
+        height: 65vh;
     }
 }
 
 .SearchContainer_wrapper {
     position: absolute;
     z-index: 1;
-    top: 20%;
     width: 100%;
+    top: 50%;
+    left: 50%;
+        transform: translate(-50%, -50%);
 }
 
 .SearchContainer_title {

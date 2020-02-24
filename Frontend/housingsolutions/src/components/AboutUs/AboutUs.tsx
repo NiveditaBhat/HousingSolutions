@@ -4,7 +4,7 @@ import realEstateImage from "../../static/images/real-estate.jpg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
-import aboutUs from "../../utils/AboutUs.settings.json";
+import { aboutUs } from "../../utils/data";
 
 interface AboutUsProps {}
 

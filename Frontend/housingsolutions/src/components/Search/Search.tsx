@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useMedia from "../../utils/useMedia";
 import SearchBar from "../SearchBar/SearchBar";
-import SearchOptions from "../../utils/Search.settings.json";
+import { searchOptions } from "../../utils/data";
 
 const Search: React.FunctionComponent = () => {
   const isTablet = useMedia("(min-width:48em)");
@@ -17,7 +17,7 @@ const Search: React.FunctionComponent = () => {
           <span className={styles.Search_title}>Find your Rental Property now</span>
         </div>
         <div className={styles.Search_cityBlock}>
-          <SearchBar suggestions={SearchOptions.city} />
+          <SearchBar suggestions={searchOptions.city} />
         </div>
         <div className={styles.Search_buttonBlock}>
           <Button
@@ -30,16 +30,16 @@ const Search: React.FunctionComponent = () => {
           </Button>
         </div>
         <div className={styles.Search_priceBlock}>
-          <Select defaultLabel="Price" options={SearchOptions.price} />
+          <Select defaultLabel="Price" options={searchOptions.price} />
         </div>
         <div className={styles.Search_bedroomsBlock}>
-          <Select defaultLabel="Bedrooms" options={SearchOptions.bedrooms} />
+          <Select defaultLabel="Bedrooms" options={searchOptions.bedrooms} />
         </div>
         <div className={styles.Search_interiorBlock}>
-          <Select defaultLabel="Interior" options={SearchOptions.interior} />
+          <Select defaultLabel="Interior" options={searchOptions.interior} />
         </div>
         <div className={styles.Search_categoryBlock}>
-          <Select defaultLabel="Category" options={SearchOptions.category} />
+          <Select defaultLabel="Category" options={searchOptions.category} />
         </div>
       </section>
     </form>

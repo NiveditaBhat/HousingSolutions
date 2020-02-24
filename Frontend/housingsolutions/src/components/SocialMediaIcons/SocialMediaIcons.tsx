@@ -1,25 +1,19 @@
 import * as React from "react";
 import styles from "./SocialMediaIcons.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { socialMediaIcons } from "../../utils/data";
 
 const SocialMediaIcons: React.FunctionComponent = () => {
   return (
     <section className={styles.SocialMediaLinks}>
-      <FontAwesomeIcon
-        icon={["fab", "facebook"]}
-        size="2x"
-        className={styles.SocialMediaLinks_item}
-      />
-      <FontAwesomeIcon
-        icon={["fab", "twitter"]}
-        size="2x"
-        className={styles.SocialMediaLinks_item}
-      />
-      <FontAwesomeIcon
-        icon={["fab", "google-plus"]}
-        size="2x"
-        className={styles.SocialMediaLinks_item}
-      />
+      {socialMediaIcons.map(icon => (
+        <FontAwesomeIcon
+          icon={icon.type as IconProp}
+          size="2x"
+          className={styles.SocialMediaLinks_item}
+        />
+      ))}
     </section>
   );
 };
