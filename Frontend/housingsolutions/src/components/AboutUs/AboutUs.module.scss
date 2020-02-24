@@ -2,21 +2,42 @@
 
 .AboutUs {
     display: flex;
-    padding: 5rem 6rem 8rem 6rem;
+    padding: 3rem 1rem 3rem 1rem;
     flex-direction: column;
     color: $color__darkGrey--secondary;
+
+    @include respond-to(screen-large) {
+        padding: 5rem 6rem 8rem 6rem;
+    }
 }
 
 .AboutUs_section {
     display: flex;
+    flex-direction: column-reverse;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+
+    @include respond-to(screen-medium) {
+        padding: 3rem 0;
+    }
+
+    @include respond-to(screen-large) {
+        flex-direction: row;
+    }
 }
 
 .AboutUs_info {
-    padding: 0 2rem;
+    padding: 0;
     font-size: $font__title--secondary;
+
+    @include respond-to(screen-medium) {
+        padding: 0 4rem;
+    }
+
+    @include respond-to(screen-large) {
+        padding: 0 2rem 0 0;
+    }
 }
 
 .AboutUs_infoList {
@@ -34,4 +55,13 @@
 
 .AboutUs_img {
     height: 35rem;
+    padding-bottom: 2.5rem;
+
+    @include respond-to(screen-medium) {
+        padding-bottom: 3.5rem;
+    }
+
+    @include respond-to(screen-large) {
+        padding: 0;
+    }
 }
