@@ -6,10 +6,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 15rem;
+    width: 20rem;
+    margin: 1rem;
     background: lighten($color__grey--secondary, 10%);
     color: darken($color__darkGrey--secondary, 15%);
     box-shadow: 4px 4px 5px -1px rgba(109, 108, 108, 1);
+
+    @include respond-to(screen-medium) {
+        margin: 0;
+        width: 20rem;
+    }
+
+    @include respond-to(screen-large) {
+        width: 15rem;
+    }
 }
 
 .Counter_counterUp {
