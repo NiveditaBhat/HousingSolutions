@@ -1,0 +1,26 @@
+@import '../../styles/config';
+
+.Counter{
+    padding:3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:15rem;
+    background:lighten($color__grey--secondary,10%);
+    color:darken($color__darkGrey--secondary,15%);
+    box-shadow: 4px 4px 5px -1px rgba(109,108,108,1);
+}
+
+.Counter_counterUp{
+    font-size:4rem;
+    margin:1rem 0;
+}
+
+.Counter_icon{
+    color:$color__orange;
+}
+
+.Counter_message{
+    font-size:$font__title;
+}
