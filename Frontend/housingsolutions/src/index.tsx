@@ -31,6 +31,8 @@ import {
   faCalendarPlus,
   faHandshake,
   faUserClock,
+  faUsers,
+  faCity,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -53,7 +55,9 @@ library.add(
   faPiggyBank,
   faCalendarPlus,
   faHandshake,
-  faUserClock
+  faUserClock,
+  faUsers,
+  faCity
 );
 
 ReactDOM.render(
