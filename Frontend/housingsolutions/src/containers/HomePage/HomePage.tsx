@@ -7,6 +7,8 @@ import SearchContainer from "../../components/SearchContainer/SearchContainer";
 import { GET_ALL_PROPERTIES } from "../../gql/getAllProperties";
 import { useQuery } from "@apollo/react-hooks";
 import AboutUs from "../../components/AboutUs/AboutUs";
+import Loader from "../../components/Loader/Loader";
+import CompanyStats from "../../components/CompanyStats/CompanyStats";
 
 const HomePage: React.FunctionComponent = () => {
   const { loading, data } = useQuery(GET_ALL_PROPERTIES);
@@ -17,7 +19,8 @@ const HomePage: React.FunctionComponent = () => {
       <section className={styles.Home_container}>
         <SearchContainer />
         <AboutUs />
-        {!loading && <SearchResults properties={data.property.allProperties} />}
+        <CompanyStats />
+        {loading ? <Loader /> : <SearchResults properties={data.property.allProperties} />}
       </section>
       <Footer />
     </section>
