@@ -65,3 +65,10 @@ export const socialMediaIcons = [
   { type: ["fab", "twitter"] },
   { type: ["fab", "google-plus"] },
 ];
+
+export const companyStats = [
+  { endNumber: 2500, category: "Clients", icon: "users" },
+  { endNumber: 3055, category: "Bookings", icon: "calendar-plus" },
+  { endNumber: 1000, category: "Houses", icon: "home" },
+  { endNumber: 20, category: "Cities", icon: "city" },
+];
