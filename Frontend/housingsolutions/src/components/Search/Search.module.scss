@@ -32,8 +32,11 @@
     }
 
     @include respond-to(screen-large) {
+        width: 60%;
+    }
+
+    @include respond-to(screen-xl) {
         width: 50%;
-        grid-template-columns: 24% 24% 24% auto;
     }
 
     .Search_searchButton {
