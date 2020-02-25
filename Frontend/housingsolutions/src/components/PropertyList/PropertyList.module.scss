@@ -1,0 +1,40 @@
+@import '../../styles/config';
+
+.PropertyList {
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to(screen-small-landscape) {
+        width: 100%;
+    }
+
+    @include respond-to(screen-medium) {
+        width: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        padding: 1rem;
+    }
+
+    @include respond-to(screen-large) {
+        width: 100%;
+        grid-gap: 2rem;
+    }
+
+    @include respond-to(screen-xl) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 3rem;
+        padding: 2rem 8rem;
+    }
+}
+
+.PropertyList_anchor {
+    text-decoration: none;
+    color: black;
+    padding: 1rem 0;
+
+    @include respond-to(screen-medium) {
+        padding: 0;
+    }
+}
