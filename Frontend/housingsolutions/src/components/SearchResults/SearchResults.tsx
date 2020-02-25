@@ -1,7 +1,8 @@
 import * as React from "react";
 import * as types from "../../types";
 import styles from "./SearchResults.module.scss";
-import Property from "../Property/Property";
+import PropertyList from "../PropertyList/PropertyList";
+import Button from "../Button/Button";
 
 interface SearchResultsProps {
   properties: types.PropertyType[];
@@ -10,11 +11,18 @@ interface SearchResultsProps {
 const SearchResults: React.FunctionComponent<SearchResultsProps> = ({ properties }) => {
   return (
     <section className={styles.SearchResults}>
-      {properties.map(property => (
-        <a href="#" key={property.id} className={styles.SearchResults_anchor}>
-          <Property property={property} />
-        </a>
-      ))}
+      <h2 className={styles.SearchResults_title}>
+        <span>Rooms & Apartments</span>
+      </h2>
+      <PropertyList properties={properties} />
+      <Button
+        type="primary"
+        label="Load more"
+        onClick={() => {
+          alert("load");
+        }}
+        extraClasses={[styles.SearchResults_loadMore]}
+      />
     </section>
   );
 };

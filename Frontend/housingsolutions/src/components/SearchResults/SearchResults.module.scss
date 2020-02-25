@@ -1,35 +1,28 @@
 @import '../../styles/config';
 
 .SearchResults {
-    margin: auto;
-    width: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    background: $color__grey;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    background: $color__grey;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
 
-    @include respond-to(screen-medium) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1.5rem;
-        padding: 1.5rem;
+    @include respond-to(screen-large) {
+        padding: 5rem 6rem 8rem 6rem;
     }
 
-    @include respond-to(screen-xl) {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 3rem;
-        padding: 2rem 8rem;
+    .SearchResults_loadMore {
+        height: 4rem;
+        width: auto;
+        padding: 0 2.2rem;
+        font-size: $font__title--secondary;
+        justify-content: center;
     }
 }
 
-.SearchResults_anchor {
-    text-decoration: none;
-    color: black;
-    padding: 1rem 0;
-
-    @include respond-to(screen-medium) {
-        padding: 0;
-    }
+.SearchResults_title {
+    font-size: 3rem;
+    text-align: center;
+    color: $color__darkGrey--secondary;
 }
