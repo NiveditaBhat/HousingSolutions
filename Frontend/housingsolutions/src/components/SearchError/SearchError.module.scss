@@ -1,0 +1,15 @@
+@import '../../styles/config';
+
+.SearchError {
+    display: flex;
+    flex-direction: column;
+    background: $color__grey;
+    justify-content: center;
+    align-items: center;
+    color: $color__darkGrey--secondary;
+    padding: 3rem 0;
+
+    @include respond-to(screen-large) {
+        padding: 5rem 6rem 8rem 6rem;
+    }
+}

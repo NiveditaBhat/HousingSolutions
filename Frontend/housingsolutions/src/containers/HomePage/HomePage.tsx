@@ -9,9 +9,10 @@ import { useQuery } from "@apollo/react-hooks";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import Loader from "../../components/Loader/Loader";
 import CompanyStats from "../../components/CompanyStats/CompanyStats";
+import SearchError from "../../components/SearchError/SearchError";
 
 const HomePage: React.FunctionComponent = () => {
-  const { loading, data } = useQuery(GET_ALL_PROPERTIES);
+  const { loading, data, error } = useQuery(GET_ALL_PROPERTIES);
 
   return (
     <section className={styles.Home}>
@@ -20,7 +21,13 @@ const HomePage: React.FunctionComponent = () => {
         <SearchContainer />
         <AboutUs />
         <CompanyStats />
-        {loading ? <Loader /> : <SearchResults properties={data.property.allProperties} />}
+        {loading ? (
+          <Loader />
+        ) : !error ? (
+          <SearchResults properties={data.property.allProperties} />
+        ) : (
+          <SearchError />
+        )}
       </section>
       <Footer />
     </section>
