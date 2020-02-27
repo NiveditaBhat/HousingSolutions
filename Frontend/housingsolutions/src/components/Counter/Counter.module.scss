@@ -9,7 +9,7 @@
     width: 20rem;
     margin: 1rem;
     background: lighten($color__grey--secondary, 10%);
-    color: darken($color__darkGrey--secondary, 15%);
+    color: $color__blue;
     box-shadow: 4px 4px 5px -1px rgba(109, 108, 108, 1);
 
     @include respond-to(screen-medium) {
@@ -23,8 +23,12 @@
 }
 
 .Counter_counterUp {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin: 1rem 0;
+
+    @include respond-to(screen-medium) {
+        font-size: 4rem;
+    }
 }
 
 .Counter_icon {
@@ -32,5 +36,9 @@
 }
 
 .Counter_message {
-    font-size: $font__title;
+    font-size: 2.5rem;
+
+    @include respond-to(screen-medium) {
+        ffont-size: $font__title;
+    }
 }
