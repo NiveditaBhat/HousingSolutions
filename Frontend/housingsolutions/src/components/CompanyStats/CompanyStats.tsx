@@ -5,6 +5,7 @@ import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { companyStats } from "../../utils/data";
 import { checkVisibility } from "../../utils/CheckVisibility";
 import { throttle } from "lodash-es";
+import houses from "../../static/images/houses-night.jpg";
 
 const CompanyStats: React.FunctionComponent = () => {
   const ref = React.useRef<HTMLElement>(null);
@@ -32,6 +33,7 @@ const CompanyStats: React.FunctionComponent = () => {
           />
         ))}
       </div>
+      <img src={houses} alt="houses-background" className={styles.CompanyStats_background} />
     </section>
   );
 };
