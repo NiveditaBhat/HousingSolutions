@@ -10,6 +10,7 @@ import AboutUs from "../../components/AboutUs/AboutUs";
 import Loader from "../../components/Loader/Loader";
 import CompanyStats from "../../components/CompanyStats/CompanyStats";
 import SearchError from "../../components/SearchError/SearchError";
+import Contact from "../../components/Contact/Contact";
 
 const HomePage: React.FunctionComponent = () => {
   const { loading, data, error } = useQuery(GET_ALL_PROPERTIES);
@@ -28,6 +29,7 @@ const HomePage: React.FunctionComponent = () => {
         ) : (
           <SearchError />
         )}
+        <Contact />
       </section>
       <Footer />
     </section>
