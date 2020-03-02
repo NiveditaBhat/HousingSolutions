@@ -32,7 +32,10 @@ import {
   faHandshake,
   faUserClock,
   faUsers,
+  faUserCircle,
   faCity,
+  faEnvelope,
+  faAddressBook,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -57,7 +60,10 @@ library.add(
   faHandshake,
   faUserClock,
   faUsers,
-  faCity
+  faCity,
+  faEnvelope,
+  faAddressBook,
+  faUserCircle
 );
 
 ReactDOM.render(
