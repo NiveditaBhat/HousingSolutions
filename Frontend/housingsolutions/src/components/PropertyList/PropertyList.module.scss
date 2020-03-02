@@ -9,15 +9,15 @@
     }
 
     @include respond-to(screen-medium) {
-        width: auto;
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
-        padding: 1rem;
+        padding: 3rem 0;
     }
 
     @include respond-to(screen-large) {
-        width: 100%;
+        width: auto;
         grid-gap: 2rem;
     }
 
@@ -25,7 +25,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 3rem;
-        padding: 2rem 8rem;
+        // padding: 2rem 8rem;
     }
 }
 

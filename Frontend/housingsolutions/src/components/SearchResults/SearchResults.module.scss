@@ -8,8 +8,8 @@
     align-items: center;
     padding: 3rem 0;
 
-    @include respond-to(screen-large) {
-        padding: 5rem 6rem 8rem 6rem;
+    @include respond-to(screen-xl) {
+        padding: 5rem 15rem 8rem 15rem;
     }
 
     .SearchResults_loadMore {
