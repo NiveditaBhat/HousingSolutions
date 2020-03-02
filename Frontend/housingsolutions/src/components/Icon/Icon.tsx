@@ -2,22 +2,11 @@ import * as React from "react";
 import styles from "./Icon.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 interface IconProps {
   text: string;
-  name:
-    | "phone-alt"
-    | "bars"
-    | "window-close"
-    | "backward"
-    | "chevron-down"
-    | "chevron-up"
-    | "search"
-    | "times"
-    | "bed"
-    | "bath"
-    | "map-marker-alt"
-    | "chair";
+  name: IconProp;
   extraClasses?: string[];
 }
 
