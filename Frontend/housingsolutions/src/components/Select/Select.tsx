@@ -9,9 +9,10 @@ import Popup from "../Popup/Popup";
 interface SelectProps {
   defaultLabel: string;
   options: string[];
+  onChange: (value: string) => void;
 }
 
-const Select: React.FunctionComponent<SelectProps> = ({ defaultLabel, options }) => {
+const Select: React.FunctionComponent<SelectProps> = ({ defaultLabel, options, onChange }) => {
   const [toggle, setToggle] = React.useState(false);
   const [label, setLabel] = React.useState(defaultLabel);
   const [updatedOptions, setOptions] = React.useState(options);
@@ -22,7 +23,6 @@ const Select: React.FunctionComponent<SelectProps> = ({ defaultLabel, options })
     e => {
       e.preventDefault();
       setToggle(!toggle);
-      console.log(toggle);
     },
     [toggle]
   );
@@ -43,6 +43,7 @@ const Select: React.FunctionComponent<SelectProps> = ({ defaultLabel, options })
         setToggle(!toggle);
         setOptions(options.filter(selectOption => selectOption !== option));
       }
+      onChange(option);
     },
     [label, toggle, updatedOptions]
   );
