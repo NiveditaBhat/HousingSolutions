@@ -44,8 +44,9 @@ const Popup: React.FunctionComponent<PopupProps> = ({
         <footer className={styles.Popup_footer}>
           <Button
             label={"Confirm your choice"}
+            type="button"
             onClick={handleToggle}
-            type={"primary"}
+            category={"primary"}
             extraClasses={[styles.Popup_closeButton]}
           />
         </footer>

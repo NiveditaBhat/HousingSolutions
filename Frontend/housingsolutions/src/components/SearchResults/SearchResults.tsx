@@ -16,7 +16,8 @@ const SearchResults: React.FunctionComponent<SearchResultsProps> = ({ properties
       </h2>
       <PropertyList properties={properties} />
       <Button
-        type="primary"
+        category="primary"
+        type="button"
         label="Load more"
         onClick={() => {
           alert("load");

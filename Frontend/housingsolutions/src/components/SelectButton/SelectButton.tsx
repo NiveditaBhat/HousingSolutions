@@ -17,7 +17,8 @@ const SelectButton: React.FunctionComponent<SelectButtonProps> = ({
   return (
     <Button
       label={label}
-      type={"default"}
+      type="button"
+      category={"default"}
       onClick={handleToggle}
       extraClasses={[styles.SelectButton]}
     >
