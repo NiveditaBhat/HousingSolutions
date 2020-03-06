@@ -11,19 +11,32 @@ interface SearchResultsProps {
 const SearchResults: React.FunctionComponent<SearchResultsProps> = ({ properties }) => {
   return (
     <section className={styles.SearchResults}>
-      <h2 className={styles.SearchResults_title}>
-        <span>Rooms & Apartments</span>
-      </h2>
-      <PropertyList properties={properties} />
-      <Button
-        category="primary"
-        type="button"
-        label="Load more"
-        onClick={() => {
-          alert("load");
-        }}
-        extraClasses={[styles.SearchResults_loadMore]}
-      />
+      {properties.length > 0 ? (
+        <>
+          <header className={styles.SearchResults_header}>
+            <h2 className={styles.SearchResults_title}>
+              <span>Rental Apartments in The Netherlands</span>
+            </h2>
+            <span>
+              <strong>{properties.length} properties</strong>
+            </span>
+          </header>
+          <PropertyList properties={properties} />
+          <Button
+            category="primary"
+            type="button"
+            label="Load more"
+            onClick={() => {
+              alert("load");
+            }}
+            extraClasses={[styles.SearchResults_loadMore]}
+          />
+        </>
+      ) : (
+        <div className={styles.SearchResults_NoResults}>
+          <h2>0 Property found</h2>
+        </div>
+      )}
     </section>
   );
 };

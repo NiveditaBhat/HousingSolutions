@@ -21,8 +21,16 @@
     }
 }
 
-.SearchResults_title {
-    font-size: 3rem;
-    text-align: center;
+.SearchResults_header {
     color: $color__darkGrey--secondary;
+    .SearchResults_title {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 5px;
+    }
+}
+
+.SearchResults_NoResults {
+    color: $color__darkGrey--secondary;
+    height: 35vh;
 }
