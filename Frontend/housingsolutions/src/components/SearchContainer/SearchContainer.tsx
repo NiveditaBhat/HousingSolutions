@@ -10,7 +10,7 @@ const SearchContainer: React.FunctionComponent = () => {
         <h1 className={styles.SearchContainer_title}>
           <span>Easiest way to rent a home</span>
         </h1>
-        <Search />
+        <Search navigate={true} />
       </div>
       <img className={styles.SearchContainer_backgroundImage} src={houses} alt="houses" />
     </section>
