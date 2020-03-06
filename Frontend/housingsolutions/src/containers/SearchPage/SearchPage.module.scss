@@ -1,0 +1,33 @@
+@import '../../styles/config';
+
+.SearchPage_container {
+    margin: 2rem;
+}
+
+.SearchPage_search {
+    @include respond-to(screen-medium) {
+        width: 95%;
+    }
+
+    @include respond-to(screen-large) {
+        width: 97%;
+        margin: 2rem auto;
+        grid-template-areas:
+            'titleBlock titleBlock titleBlock titleBlock titleBlock titleBlock titleBlock'
+            'cityBlock cityBlock priceBlock interiorBlock categoryBlock bedroomsBlock buttonBlock';
+        grid-template-columns: auto auto auto auto auto auto auto;
+    }
+}
+
+.SearchPage_heroImage {
+    background-image: linear-gradient(
+            to bottom,
+            rgba(1, 48, 56, 0.315) 20%,
+            rgba(1, 55, 65, 0.445) 100%
+        ),
+        url('../../static/images/amsterdam4.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 25rem;
+    width: 100%;
+}
