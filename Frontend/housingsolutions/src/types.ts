@@ -1,4 +1,5 @@
 //export type T = T | null;
+import { UPDATE_FILTER } from "./constants/ActionConstants";
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -284,4 +285,9 @@ export type UserType = {
 export type Verify = {
   __typename?: "Verify";
   payload?: Scalars["GenericScalar"];
+};
+
+export type UpdateFilterAction = {
+  type: typeof UPDATE_FILTER;
+  payload: SearchInput;
 };
