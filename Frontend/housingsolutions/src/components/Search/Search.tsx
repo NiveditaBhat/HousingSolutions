@@ -7,41 +7,58 @@ import useMedia from "../../utils/useMedia";
 import SearchBar from "../SearchBar/SearchBar";
 import { searchOptions } from "../../utils/data";
 import * as types from "../../types";
+import { connect } from "react-redux";
+import { updateFilter } from "../../actions/index";
+import { Dispatch } from "redux";
+import { useHistory } from "react-router-dom";
+import classNames from "classnames";
 
-const Search: React.FunctionComponent = () => {
+interface SearchProps {
+  updateSearchFilter: (filter: types.SearchInput) => void;
+  extraClasses?: string[];
+  navigate?: boolean;
+}
+
+//update 'SearchFilter' in the store whenever the search inputs change
+const mapDispatchToProps = (dispatch: Dispatch<types.UpdateFilterAction>) => ({
+  updateSearchFilter: (filter: types.SearchInput) => dispatch(updateFilter(filter)),
+});
+
+const Search: React.FunctionComponent<SearchProps> = ({
+  updateSearchFilter,
+  extraClasses,
+  navigate,
+}) => {
   const isTablet = useMedia("(min-width:48em)");
   const [rent, setRent] = useState(0);
-  const [city, setCity] = useState("Eindhoven");
+  const [city, setCity] = useState("");
   const [category, setCategory] = useState("");
   const [interior, setInterior] = useState("");
   const [bedroom, setBedroom] = useState(0);
-
-  const [searchInput, setSearchInput] = useState<types.SearchInput>({
-    city: "Eindhoven",
-  });
+  const history = useHistory();
 
   const handleSubmit = React.useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
-
-      const input = Object.assign(
+      const searchInput = Object.assign(
         {},
         city && { city },
         rent && { rent },
         category && { category },
         interior && { interior },
-        bedroom && { bedroom }
+        bedroom && { bedroom },
+        { country: "NL" }
       );
-
-      setSearchInput(input);
+      updateSearchFilter(searchInput);
+      //navigate to search page after updating the 'SearchFilter' in the store
+      if (navigate) history.push("/search");
     },
     [city, rent, category, interior, bedroom]
   );
 
-  console.log(searchInput);
   return (
     <form>
-      <section className={styles.Search}>
+      <section className={classNames(styles.Search, extraClasses)}>
         <div className={styles.Search_titleBlock}>
           <span className={styles.Search_title}>Find your Rental Property now</span>
         </div>
@@ -92,4 +109,4 @@ const Search: React.FunctionComponent = () => {
   );
 };
 
-export default Search;
+export default connect(null, mapDispatchToProps)(Search);
