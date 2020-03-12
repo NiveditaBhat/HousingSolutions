@@ -6,7 +6,7 @@ import useMedia from "../../utils/useMedia";
 
 interface PopupProps {
   label: string;
-  options: string[];
+  options: Array<{ id: string; text: string } | string>;
   handleToggle(event: React.MouseEvent<HTMLButtonElement>): void;
   onOptionsClicked(option: string): void | undefined;
 }
@@ -33,10 +33,10 @@ const Popup: React.FunctionComponent<PopupProps> = ({
             {options.map((option, i) => (
               <li
                 className={styles.Popup_item}
-                key={label + i}
-                onClick={() => onOptionsClicked(option)}
+                key={typeof option === "string" ? option + i : option.id}
+                onClick={() => onOptionsClicked(typeof option === "string" ? option : option.text)}
               >
-                {option}
+                {typeof option === "string" ? option : option.text}
               </li>
             ))}
           </ul>
