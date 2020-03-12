@@ -1,5 +1,4 @@
-//export type T = T | null;
-import { UPDATE_FILTER } from "./constants/ActionConstants";
+import { UPDATE_SEARCH_FILTER, UPDATE_SORT_FILTER } from "./constants/ActionConstants";
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -287,7 +286,12 @@ export type Verify = {
   payload?: Scalars["GenericScalar"];
 };
 
-export type UpdateFilterAction = {
-  type: typeof UPDATE_FILTER;
+export type UpdateSearchFilterAction = {
+  type: typeof UPDATE_SEARCH_FILTER;
   payload: SearchInput;
+};
+
+export type UpdateSortFilterAction = {
+  type: typeof UPDATE_SORT_FILTER;
+  payload: SortByFields;
 };
