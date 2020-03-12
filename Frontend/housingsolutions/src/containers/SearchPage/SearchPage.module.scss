@@ -1,21 +1,35 @@
 @import '../../styles/config';
 
-.SearchPage_container {
-    margin: 2rem;
-}
-
 .SearchPage_search {
+    padding: 0;
+
+    @include respond-to(screen-small-landscape) {
+        padding-top: 1rem;
+        width: auto;
+    }
+
     @include respond-to(screen-medium) {
+        padding: 2rem;
         width: 95%;
     }
 
     @include respond-to(screen-large) {
-        width: 97%;
-        margin: 2rem auto;
+        width: 98%;
+        padding: 2rem 0;
         grid-template-areas:
             'titleBlock titleBlock titleBlock titleBlock titleBlock titleBlock titleBlock'
             'cityBlock cityBlock priceBlock interiorBlock categoryBlock bedroomsBlock buttonBlock';
-        grid-template-columns: auto auto auto auto auto auto auto;
+        grid-template-columns: 10% 10% 15% 15% 15% 15% auto;
+    }
+
+    @include respond-to(screen-xl) {
+        grid-template-columns: 10% 10% 15% 15% 15% 15% auto;
+    }
+}
+
+.SearchPage_results {
+    @include respond-to(screen-large) {
+        padding: 2rem;
     }
 }
 
