@@ -72,3 +72,10 @@ export const companyStats = [
   { endNumber: 1000, category: "Houses", icon: "home" },
   { endNumber: 20, category: "Cities", icon: "city" },
 ];
+
+export const SortOptions = [
+  { id: "price_ASC", text: "Price: Low to High" },
+  { id: "price_DSC", text: "Price: High to low" },
+  { id: "availability_ASC", text: "Availability: Old to New" },
+  { id: "availability_DSC", text: "Availability: New to old" },
+];
