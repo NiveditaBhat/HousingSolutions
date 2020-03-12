@@ -22,9 +22,31 @@
 }
 
 .SearchResults_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
     color: $color__darkGrey--secondary;
+    padding: 1rem;
+
+    @include respond-to(screen-medium) {
+        width: 95%;
+        flex-direction: row;
+    }
+
+    @include respond-to(screen-large) {
+        width: 70%;
+    }
+
+    .SearchResults_titleContainer {
+        margin-bottom: 2rem;
+        @include respond-to(screen-medium) {
+            margin: 0;
+        }
+    }
+
     .SearchResults_title {
-        text-align: center;
         font-size: 3rem;
         margin-bottom: 5px;
     }
