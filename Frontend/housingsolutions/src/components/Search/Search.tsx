@@ -8,7 +8,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { searchOptions } from "../../utils/data";
 import * as types from "../../types";
 import { connect } from "react-redux";
-import { updateFilter } from "../../actions/index";
+import { updateSearchFilter } from "../../actions/index";
 import { Dispatch } from "redux";
 import { useHistory } from "react-router-dom";
 import classNames from "classnames";
@@ -20,8 +20,8 @@ interface SearchProps {
 }
 
 //update 'SearchFilter' in the store whenever the search inputs change
-const mapDispatchToProps = (dispatch: Dispatch<types.UpdateFilterAction>) => ({
-  updateSearchFilter: (filter: types.SearchInput) => dispatch(updateFilter(filter)),
+const mapDispatchToProps = (dispatch: Dispatch<types.UpdateSearchFilterAction>) => ({
+  updateSearchFilter: (filter: types.SearchInput) => dispatch(updateSearchFilter(filter)),
 });
 
 const Search: React.FunctionComponent<SearchProps> = ({

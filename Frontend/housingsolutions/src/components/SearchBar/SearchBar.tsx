@@ -5,7 +5,7 @@ import Dropdown from "../Dropdown/Dropdown";
 import ClickOutside from "../ClickOutside/ClickOutside";
 
 interface SearchBarProps {
-  suggestions: string[];
+  suggestions: Array<string>;
   onChange: (value: string) => void;
 }
 
