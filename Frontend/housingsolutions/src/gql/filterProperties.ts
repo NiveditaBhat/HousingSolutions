@@ -1,9 +1,9 @@
 import { gql } from "apollo-boost";
 
 export const FILTER_PROPERTIES = gql`
-  query searchProperties($searchFilter: SearchInput) {
+  query searchProperties($searchFilter: SearchInput, $sortParams: SortByFields, $order: SortOrder) {
     property {
-      searchProperties(filterParams: $searchFilter) {
+      searchProperties(filterParams: $searchFilter, sortParams: $sortParams, order: $order) {
         id
         name
         bedroom
