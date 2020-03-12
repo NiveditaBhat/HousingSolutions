@@ -8,16 +8,29 @@ import Popup from "../Popup/Popup";
 
 interface SelectProps {
   defaultLabel: string;
-  options: string[];
+  options: Array<{ id: string; text: string } | string>;
   onChange: (value: string) => void;
+  preSelect?: string;
 }
 
-const Select: React.FunctionComponent<SelectProps> = ({ defaultLabel, options, onChange }) => {
+const Select: React.FunctionComponent<SelectProps> = ({
+  defaultLabel,
+  options,
+  onChange,
+  preSelect,
+}) => {
   const [toggle, setToggle] = React.useState(false);
   const [label, setLabel] = React.useState(defaultLabel);
   const [updatedOptions, setOptions] = React.useState(options);
 
   const isDesktop = useMedia("(min-width:64em)");
+
+  React.useEffect(() => {
+    if (preSelect) {
+      setLabel(preSelect);
+      setOptions(filterOptions(preSelect));
+    }
+  }, [preSelect]);
 
   const handleToggle = React.useCallback(
     e => {
@@ -36,12 +49,19 @@ const Select: React.FunctionComponent<SelectProps> = ({ defaultLabel, options, o
     [toggle]
   );
 
+  const filterOptions = React.useCallback(option => {
+    return options.filter(selectOption => {
+      const optionObj = typeof selectOption === "string" ? selectOption : selectOption.text;
+      return optionObj !== option ? option : null;
+    });
+  }, []);
+
   const handleOptionsClick = React.useCallback(
     option => {
       setLabel(option);
       if (isDesktop) {
         setToggle(!toggle);
-        setOptions(options.filter(selectOption => selectOption !== option));
+        setOptions(filterOptions(option));
       }
       onChange(option);
     },
@@ -50,7 +70,11 @@ const Select: React.FunctionComponent<SelectProps> = ({ defaultLabel, options, o
 
   const Select = (
     <section className={styles.Select}>
-      <SelectButton label={label} handleToggle={handleToggle} toggle={toggle} />
+      <SelectButton
+        label={toggle ? defaultLabel : label}
+        handleToggle={handleToggle}
+        toggle={toggle}
+      />
       {isDesktop
         ? toggle && <Dropdown options={updatedOptions} onOptionsClicked={handleOptionsClick} />
         : toggle && (
