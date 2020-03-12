@@ -11,34 +11,39 @@ import SearchError from "../../components/SearchError/SearchError";
 import Search from "../../components/Search/Search";
 import { connect } from "react-redux";
 
+type sortFilterType = { sortParams: types.SortByFields; order: types.SortOrder };
+
 interface SearchPageProps {
   searchFilter: types.SearchInput;
+  sortFilter: sortFilterType;
 }
 
 interface RootState {
-  search: { searchFilter: types.SearchInput };
+  search: { searchFilter: types.SearchInput; sortFilter: sortFilterType };
 }
 
 const mapStateToProps = (state: RootState) => ({
   searchFilter: state.search.searchFilter,
+  sortFilter: state.search.sortFilter,
 });
 
-const SearchPage: React.FunctionComponent<SearchPageProps> = ({ searchFilter }) => {
-  console.log(searchFilter);
-  const { loading, data, error } = useQuery(FILTER_PROPERTIES, {
-    variables: { searchFilter },
+const SearchPage: React.FunctionComponent<SearchPageProps> = ({ searchFilter, sortFilter }) => {
+  const { sortParams, order } = sortFilter;
+  const { data, error } = useQuery(FILTER_PROPERTIES, {
+    variables: { searchFilter, sortParams, order },
   });
-  console.log(data);
+
   return (
     <section className={styles.SearchPage}>
       <Header />
       <section className={styles.SearchPage_container}>
         <div className={styles.SearchPage_heroImage} />
         <Search extraClasses={[styles.SearchPage_search]} />
-        {loading ? (
-          <Loader />
-        ) : data && !error ? (
-          <SearchResults properties={data.property.searchProperties} />
+        {data && !error ? (
+          <SearchResults
+            properties={data.property.searchProperties}
+            extraClasses={[styles.SearchPage_results]}
+          />
         ) : (
           <SearchError />
         )}
