@@ -1,0 +1,9 @@
+@import '../../styles/config';
+
+.SortProperties {
+    width: 100%;
+
+    @include respond-to(screen-medium) {
+        width: 25rem;
+    }
+}
