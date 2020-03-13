@@ -1,12 +1,9 @@
 import * as React from "react";
 import styles from "./SearchPage.module.scss";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import SearchResults from "../../components/SearchResults/SearchResults";
 import { useQuery } from "@apollo/react-hooks";
 import * as types from "../../types";
 import { FILTER_PROPERTIES } from "../../gql/filterProperties";
-import Loader from "../../components/Loader/Loader";
 import SearchError from "../../components/SearchError/SearchError";
 import Search from "../../components/Search/Search";
 import { connect } from "react-redux";
@@ -34,21 +31,17 @@ const SearchPage: React.FunctionComponent<SearchPageProps> = ({ searchFilter, so
   });
 
   return (
-    <section className={styles.SearchPage}>
-      <Header />
-      <section className={styles.SearchPage_container}>
-        <div className={styles.SearchPage_heroImage} />
-        <Search extraClasses={[styles.SearchPage_search]} />
-        {data && !error ? (
-          <SearchResults
-            properties={data.property.searchProperties}
-            extraClasses={[styles.SearchPage_results]}
-          />
-        ) : (
-          <SearchError />
-        )}
-      </section>
-      <Footer />
+    <section className={styles.SearchPage_container}>
+      <div className={styles.SearchPage_heroImage} />
+      <Search extraClasses={[styles.SearchPage_search]} />
+      {data && !error ? (
+        <SearchResults
+          properties={data.property.searchProperties}
+          extraClasses={[styles.SearchPage_results]}
+        />
+      ) : (
+        <SearchError />
+      )}
     </section>
   );
 };

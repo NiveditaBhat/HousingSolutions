@@ -7,7 +7,6 @@ import Header from "../../components/Header/Header";
 const PageNotFound: React.FunctionComponent = () => {
   return (
     <section className={styles.NotFound}>
-      <Header />
       <section className={styles.NotFound_titleBlock}>
         <h1>
           <span className={styles.NotFound_title}>404</span>
