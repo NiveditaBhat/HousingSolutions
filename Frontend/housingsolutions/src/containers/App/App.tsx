@@ -8,6 +8,7 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import { withRouter } from "react-router-dom";
 import { Location } from "history";
+import PropertyDetailPage from "../PropertyDetailPage/PropertyDetailPage";
 
 interface AppProps {
   location: Location;
@@ -21,6 +22,7 @@ const App: React.FunctionComponent<AppProps> = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/search" component={SearchPage} />
+          <Route path="/property/:id" component={PropertyDetailPage} />
           <Route path="*" component={PageNotFound} />
         </Switch>
       </main>
