@@ -10,12 +10,13 @@ interface PropertyProps {
 }
 
 const Property: React.FunctionComponent<PropertyProps> = ({ property }) => {
-  const mainImage = property.Image[0];
+  const mainImage = property.Image.find(image => image.alt === "mainImage");
+  const image = mainImage ? mainImage : property.Image[0];
   const interiorType = property.interior.toLowerCase().replace("_", "-");
   return (
     <section className={styles.Property}>
       <header className={styles.Property_header}>
-        <img className={styles.Property_img} src={mainImage.url} alt={mainImage.alt} />
+        <img className={styles.Property_img} src={image.url} alt={image.alt} />
         <div className={styles.Property_title}>
           <h3 className={styles.Property_name}>{property.name}</h3>
           <Icon

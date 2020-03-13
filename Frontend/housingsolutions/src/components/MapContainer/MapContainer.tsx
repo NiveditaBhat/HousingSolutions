@@ -21,6 +21,7 @@ const MapContainer: React.FunctionComponent = () => {
         }}
         defaultZoom={8}
         onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
+        yesIWantToUseGoogleMapApiInternals={true}
       >
         <span className={styles.MapContainer_marker}>HousingSolutions</span>
       </GoogleMapReact>
