@@ -30,9 +30,8 @@
 }
 
 .PropertyList_anchor {
-    text-decoration: none;
-    color: black;
     padding: 1rem 0;
+    cursor: pointer;
 
     @include respond-to(screen-medium) {
         padding: 0;
