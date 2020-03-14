@@ -2,7 +2,6 @@ import * as React from "react";
 import styles from "./PageNotFound.module.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Header from "../../components/Header/Header";
 
 const PageNotFound: React.FunctionComponent = () => {
   return (
