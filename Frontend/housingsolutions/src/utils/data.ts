@@ -79,3 +79,11 @@ export const SortOptions = [
   { id: "availability_ASC", text: "Availability: Old to New" },
   { id: "availability_DSC", text: "Availability: New to old" },
 ];
+
+export const mosaicTypes = [
+  { type: "main" },
+  { type: "common" },
+  { type: "living" },
+  { type: "bedroom" },
+  { type: "kitchen" },
+];
