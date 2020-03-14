@@ -1,0 +1,26 @@
+@import '../../styles/config/';
+
+.PropertyDetailHeading {
+    color: $color__darkGrey--secondary;
+    margin-bottom: 1.8rem;
+    .PropertyDetailHeading_title {
+        font-size: $font__title;
+        margin: 0.5rem 0;
+    }
+
+    .PropertyDetailHeading_subTitle {
+        font-size: $font__body--secondary;
+        font-weight: bold;
+        display: flex;
+        margin-top: 1rem;
+    }
+}
+
+.PropertyDetailHeading_navigation {
+    padding-right: 0.8rem;
+
+    a {
+        text-decoration: none;
+        color: $color__darkGrey--secondary;
+    }
+}
