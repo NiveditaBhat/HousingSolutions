@@ -12,6 +12,8 @@ import { updateSearchFilter } from "../../actions/index";
 import { Dispatch } from "redux";
 import { useHistory } from "react-router-dom";
 import classNames from "classnames";
+import { useLocation } from "react-router";
+import queryString from "query-string";
 
 interface SearchProps {
   updateSearchFilter: (filter: types.SearchInput) => void;
@@ -29,6 +31,7 @@ const Search: React.FunctionComponent<SearchProps> = ({
   extraClasses,
   navigate,
 }) => {
+  const param = useLocation().search;
   const isTablet = useMedia("(min-width:48em)");
   const [rent, setRent] = useState(0);
   const [city, setCity] = useState("");
@@ -36,6 +39,16 @@ const Search: React.FunctionComponent<SearchProps> = ({
   const [interior, setInterior] = useState("");
   const [bedroom, setBedroom] = useState(0);
   const history = useHistory();
+
+  const getFilter = React.useCallback(param => {
+    return queryString.parse(param);
+  }, []);
+
+  React.useEffect(() => {
+    if (param) {
+      updateSearchFilter(getFilter(param));
+    }
+  }, []);
 
   const handleSubmit = React.useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -102,6 +115,7 @@ const Search: React.FunctionComponent<SearchProps> = ({
             defaultLabel="Category"
             options={searchOptions.category}
             onChange={value => setCategory(value !== "No Preference" ? value : "")}
+            preSelect={param && (getFilter(param).category as string)}
           />
         </div>
       </section>
