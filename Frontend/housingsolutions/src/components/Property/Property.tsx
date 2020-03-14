@@ -10,7 +10,7 @@ interface PropertyProps {
 }
 
 const Property: React.FunctionComponent<PropertyProps> = ({ property }) => {
-  const mainImage = property.Image.find(image => image.alt === "mainImage");
+  const mainImage = property.Image.find(image => image.alt === "main");
   const image = mainImage ? mainImage : property.Image[0];
   const interiorType = property.interior.toLowerCase().replace("_", "-");
   return (
