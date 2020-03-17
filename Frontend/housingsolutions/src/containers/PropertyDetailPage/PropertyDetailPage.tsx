@@ -7,6 +7,7 @@ import { useQuery } from "@apollo/react-hooks";
 import PropertyCarousel from "../../components/PropertyCarousel/PropertyCarousel";
 import PropertyMosaic from "../../components/PropertyMosaic/PropertyMosaic";
 import PropertyDetailHeading from "../../components/PropertyDetailHeading/PropertyDetailHeading";
+import { PropertyImage } from "../../types";
 
 const PropertyDetailPage: React.FunctionComponent = () => {
   const { id } = useParams();
@@ -14,12 +15,35 @@ const PropertyDetailPage: React.FunctionComponent = () => {
     variables: { id },
   });
   const propertyDetail = data && data.property.property;
+  const [carousel, toggleCarousel] = React.useState(false);
+  const [imageIndex, setImageIndex] = React.useState(0);
+
+  const handleClick = React.useCallback(
+    url => {
+      const index = propertyDetail.Image.findIndex((image: PropertyImage) => image.url === url);
+      setImageIndex(index);
+      toggleCarousel(true);
+    },
+    [imageIndex, propertyDetail]
+  );
+
+  const handleClose = React.useCallback(() => {
+    toggleCarousel(false);
+  }, []);
+
   return (
     <section className={styles.PropertyDetail}>
       {data && !error ? (
         <div>
           <PropertyDetailHeading propertyDetail={propertyDetail} />
-          <PropertyMosaic propertyImages={propertyDetail.Image} />
+          <PropertyMosaic propertyImages={propertyDetail.Image} onClick={handleClick} />
+          {carousel && (
+            <PropertyCarousel
+              propertyImages={propertyDetail.Image}
+              onClose={handleClose}
+              selectedImage={imageIndex}
+            />
+          )}
         </div>
       ) : null}
     </section>
