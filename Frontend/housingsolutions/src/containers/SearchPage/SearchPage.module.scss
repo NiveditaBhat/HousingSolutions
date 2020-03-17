@@ -1,5 +1,10 @@
 @import '../../styles/config';
 
+.SearchPage_searchWrapper {
+    width: 100%;
+    background: rgba(248, 248, 248, 0.781);
+}
+
 .SearchPage_search {
     padding: 0;
 
@@ -14,7 +19,7 @@
     }
 
     @include respond-to(screen-large) {
-        width: 98%;
+        width: 80%;
         padding: 2rem 0;
         grid-template-areas:
             'titleBlock titleBlock titleBlock titleBlock titleBlock titleBlock titleBlock'
@@ -29,7 +34,7 @@
 
 .SearchPage_results {
     @include respond-to(screen-large) {
-        padding: 2rem;
+        padding: 2rem 16rem;
     }
 }
 

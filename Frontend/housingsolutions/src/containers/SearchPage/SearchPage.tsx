@@ -33,7 +33,9 @@ const SearchPage: React.FunctionComponent<SearchPageProps> = ({ searchFilter, so
   return (
     <section className={styles.SearchPage_container}>
       <div className={styles.SearchPage_heroImage} />
-      <Search extraClasses={[styles.SearchPage_search]} />
+      <div className={styles.SearchPage_searchWrapper}>
+        <Search extraClasses={[styles.SearchPage_search]} />
+      </div>
       {data && !error ? (
         <SearchResults
           properties={data.property.searchProperties}
