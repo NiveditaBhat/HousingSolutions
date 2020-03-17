@@ -9,7 +9,7 @@
     padding: 3rem 0;
 
     @include respond-to(screen-xl) {
-        padding: 5rem 15rem 8rem 15rem;
+        padding: 5rem 16rem 8rem 16rem;
     }
 
     .SearchResults_loadMore {
@@ -36,7 +36,7 @@
     }
 
     @include respond-to(screen-large) {
-        width: 70%;
+        width: 80%;
     }
 
     .SearchResults_titleContainer {

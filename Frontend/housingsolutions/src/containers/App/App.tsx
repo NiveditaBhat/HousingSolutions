@@ -16,9 +16,9 @@ interface AppProps {
 
 const App: React.FunctionComponent<AppProps> = () => {
   return (
-    <section>
+    <section className={styles.App}>
       <Header />
-      <main className={styles.MainWrapper}>
+      <main>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/search" component={SearchPage} />

@@ -22,10 +22,10 @@
     }
 
     @include respond-to(screen-xl) {
+        width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 3rem;
-        // padding: 2rem 8rem;
+        grid-template-columns: 32% 32% 32%;
+        grid-gap: 2rem;
     }
 }
 
