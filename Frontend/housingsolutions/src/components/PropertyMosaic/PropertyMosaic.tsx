@@ -1,6 +1,5 @@
 import * as React from "react";
 import styles from "./PropertyMosaic.module.scss";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import * as types from "../../types";
 import fallbackImage from "../../static/images/fallback.png";
 import { mosaicTypes } from "../../utils/data";
@@ -9,16 +8,20 @@ import useMedia from "../../utils/useMedia";
 
 interface PropertyListProps {
   propertyImages: types.PropertyImage[];
+  onClick: (url: string) => void;
 }
 
-const PropertyMosaic: React.FunctionComponent<PropertyListProps> = ({ propertyImages }) => {
+const PropertyMosaic: React.FunctionComponent<PropertyListProps> = ({
+  propertyImages,
+  onClick,
+}) => {
   const isDesktop = useMedia("(min-width:64em)");
   const types = !isDesktop
     ? mosaicTypes.filter(mosaic => mosaic.type !== "bedroom" && mosaic.type !== "kitchen")
     : mosaicTypes;
   const buttonBlock = !isDesktop ? "common" : "kitchen";
   const morePhotos = propertyImages.length - types.length;
-  const getImageType = (images: types.PropertyImage[], type: string) => {
+  const getImageUrl = (images: types.PropertyImage[], type: string) => {
     const image = images.find(image => image.alt === type);
     return image ? image.url : fallbackImage;
   };
@@ -32,8 +35,9 @@ const PropertyMosaic: React.FunctionComponent<PropertyListProps> = ({ propertyIm
             styles.PropertyMosaic_block,
             styles["PropertyMosaic_" + image.type]
           )}
+          onClick={() => onClick(getImageUrl(propertyImages, image.type))}
         >
-          <img src={getImageType(propertyImages, image.type)} />
+          <img src={getImageUrl(propertyImages, image.type)} />
           {image.type === buttonBlock && (
             <span className={styles.PropertyMosaic_morePhotos}>
               {morePhotos} more photos available
