@@ -25,6 +25,8 @@ export const GET_PROPERTY_DETAIL = gql`
           country
           zipCode
         }
+        latitude
+        longitude
       }
     }
   }
