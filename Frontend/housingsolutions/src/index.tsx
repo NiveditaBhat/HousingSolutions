@@ -36,6 +36,11 @@ import {
   faCity,
   faEnvelope,
   faAddressBook,
+  faCalendarWeek,
+  faMoneyBill,
+  faImage,
+  faMapMarkedAlt,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -63,7 +68,12 @@ library.add(
   faCity,
   faEnvelope,
   faAddressBook,
-  faUserCircle
+  faUserCircle,
+  faCalendarWeek,
+  faMoneyBill,
+  faImage,
+  faMapMarkedAlt,
+  faChevronRight
 );
 
 ReactDOM.render(
