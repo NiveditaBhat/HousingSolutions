@@ -231,6 +231,8 @@ export type PropertyType = {
   propertyPrice?: PropertyPrice;
   address?: PropertyAddress;
   Image: Array<PropertyImage>;
+  longitude: Scalars["Float"];
+  latitude: Scalars["Float"];
   booking?: CustomerBookingType;
 };
 
