@@ -3,6 +3,10 @@
 .PropertyDetailHeading {
     color: $color__darkGrey--secondary;
     margin-bottom: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
     .PropertyDetailHeading_title {
         font-size: $font__title;
         margin: 0.5rem 0;
