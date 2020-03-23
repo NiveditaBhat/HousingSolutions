@@ -1,3 +1,5 @@
+import { PropertyType } from "../types";
+
 export const searchOptions = {
   city: [
     "Amsterdam",
@@ -86,4 +88,33 @@ export const mosaicTypes = [
   { type: "living" },
   { type: "bedroom" },
   { type: "kitchen" },
+];
+
+export const propertySummary = [
+  { id: "home", type: (propertyDetail: PropertyType) => propertyDetail.category },
+  { id: "chair", type: (propertyDetail: PropertyType) => propertyDetail.interior },
+  {
+    id: "bed",
+    type: (propertyDetail: PropertyType) => {
+      return `${propertyDetail.bedroom} bedroom`;
+    },
+  },
+  {
+    id: "bath",
+    type: (propertyDetail: PropertyType) => {
+      return `${propertyDetail.bathroom} bathroom`;
+    },
+  },
+  {
+    id: "calendar-week",
+    type: (propertyDetail: PropertyType) => {
+      return `Available from ${propertyDetail.availability}`;
+    },
+  },
+  {
+    id: "money-bill",
+    type: (propertyDetail: PropertyType) => {
+      return `€ ${propertyDetail.propertyPrice?.deposit} deposit`;
+    },
+  },
 ];
