@@ -4,7 +4,7 @@ import * as types from "../../types";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "./PropertyCarousel.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Modal from "../Modal/Modal";
 
 interface PropertyListProps {
   propertyImages: types.PropertyImage[];
@@ -18,10 +18,7 @@ const PropertyCarousel: React.FunctionComponent<PropertyListProps> = ({
   selectedImage,
 }) => {
   return (
-    <section className={styles.PropertyCarousel}>
-      <div className={styles.PropertyCarousel_close} onClick={onClose}>
-        <FontAwesomeIcon icon="times" size="lg" />
-      </div>
+    <Modal onClose={onClose}>
       <Carousel
         showThumbs={false}
         dynamicHeight
@@ -35,7 +32,7 @@ const PropertyCarousel: React.FunctionComponent<PropertyListProps> = ({
           </div>
         ))}
       </Carousel>
-    </section>
+    </Modal>
   );
 };
 
