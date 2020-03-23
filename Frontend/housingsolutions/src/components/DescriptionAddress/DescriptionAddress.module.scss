@@ -1,0 +1,27 @@
+@import '../../styles/config';
+
+.DescriptionAddress {
+    display: grid;
+
+    .DescriptionAddress_detail {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 2rem;
+
+        @include respond-to(screen-small-landscape) {
+            width: 82%;
+        }
+
+        @include respond-to(screen-medium) {
+            width: 37%;
+        }
+
+        @include respond-to(screen-large) {
+            width: 27%;
+        }
+
+        dd {
+            font-weight: bold;
+        }
+    }
+}
