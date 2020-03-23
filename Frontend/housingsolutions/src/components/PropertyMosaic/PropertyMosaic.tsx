@@ -8,7 +8,7 @@ import useMedia from "../../utils/useMedia";
 
 interface PropertyListProps {
   propertyImages: types.PropertyImage[];
-  onClick: (url: string) => void;
+  onClick: (target: "image", url: string) => void;
 }
 
 const PropertyMosaic: React.FunctionComponent<PropertyListProps> = ({
@@ -35,9 +35,9 @@ const PropertyMosaic: React.FunctionComponent<PropertyListProps> = ({
             styles.PropertyMosaic_block,
             styles["PropertyMosaic_" + image.type]
           )}
-          onClick={() => onClick(getImageUrl(propertyImages, image.type))}
+          onClick={() => onClick("image", getImageUrl(propertyImages, image.type))}
         >
-          <img src={getImageUrl(propertyImages, image.type)} />
+          <img src={getImageUrl(propertyImages, image.type)} alt={image.type} />
           {image.type === buttonBlock && (
             <span className={styles.PropertyMosaic_morePhotos}>
               {morePhotos} more photos available
