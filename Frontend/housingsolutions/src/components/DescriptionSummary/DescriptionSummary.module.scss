@@ -1,0 +1,40 @@
+@import '../../styles/config';
+
+.DescriptionSummary {
+    display: flex;
+    flex-direction: column;
+    margin: 3.5rem 0 2.5rem 0;
+    padding-left: 0;
+
+    @include respond-to(screen-small-landscape) {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 1rem;
+        width: 80%;
+    }
+
+    @include respond-to(screen-medium) {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 2rem;
+        width: 85%;
+    }
+
+    @include respond-to(screen-large) {
+        width: 60%;
+    }
+
+    .DescriptionSummary_item {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+
+        @include respond-to(screen-medium) {
+            padding: 0;
+        }
+
+        svg {
+            margin-right: 2rem;
+        }
+    }
+}
