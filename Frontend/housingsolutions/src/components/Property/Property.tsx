@@ -1,9 +1,7 @@
 import * as React from "react";
 import * as types from "../../types";
 import styles from "./Property.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "../Icon/Icon";
-import Button from "../Button/Button";
 
 interface PropertyProps {
   property: types.PropertyType;

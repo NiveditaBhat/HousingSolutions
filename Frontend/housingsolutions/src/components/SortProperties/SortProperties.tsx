@@ -1,7 +1,5 @@
 import * as React from "react";
 import styles from "./SortProperties.module.scss";
-import Button from "../Button/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Select from "../Select/Select";
 import { SortOptions } from "../../utils/data";
 import { connect } from "react-redux";
