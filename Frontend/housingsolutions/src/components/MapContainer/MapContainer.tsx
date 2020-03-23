@@ -1,29 +1,39 @@
 import * as React from "react";
 import styles from "./MapContainer.module.scss";
-import GoogleMapReact from "google-map-react";
+import GoogleMapReact, { MapOptions } from "google-map-react";
+import classNames from "classnames";
 
-const MapContainer: React.FunctionComponent = () => {
+interface MapContainerProps {
+  extraClasses?: string[];
+  position: { lat: number; lng: number };
+  title?: string;
+  options?: MapOptions;
+}
+
+const MapContainer: React.FunctionComponent<MapContainerProps> = ({
+  extraClasses,
+  position,
+  title,
+  options,
+}) => {
   const renderMarkers = (map: any, maps: any) => {
     new maps.Marker({
-      position: { lat: 51.43337, lng: 5.47727 },
+      position: position,
       map,
-      title: "HousingSolutions",
     });
   };
 
   return (
-    <div className={styles.MapContainer}>
+    <div className={classNames(styles.MapContainer, extraClasses)}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyDa7i5x92aP8bXFH3RNw0YKlIkJL5TNwo4" }}
-        defaultCenter={{
-          lat: 51.43337,
-          lng: 5.47727,
-        }}
+        defaultCenter={position}
         defaultZoom={8}
         onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
         yesIWantToUseGoogleMapApiInternals={true}
+        options={options}
       >
-        <span className={styles.MapContainer_marker}>HousingSolutions</span>
+        {title && <span className={styles.MapContainer_marker}>{title}</span>}
       </GoogleMapReact>
     </div>
   );
