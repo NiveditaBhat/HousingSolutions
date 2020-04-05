@@ -55,7 +55,6 @@ const PropertyDetailPage: React.FunctionComponent = () => {
             <MapModal
               onClose={() => toggleModal(false)}
               position={{ lat: propertyDetail.latitude, lng: propertyDetail.longitude }}
-              extraClasses={[styles.PropertyDetail_mapModal]}
               options={{
                 fullscreenControl: false,
               }}

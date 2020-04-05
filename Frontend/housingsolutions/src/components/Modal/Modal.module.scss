@@ -9,14 +9,22 @@
     width: 100%;
     height: 100%;
     overflow-y: hidden;
-    display: flex;
-    flex-direction: column;
+}
+
+.Modal_children {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
 
 .Modal_close {
+    position: absolute;
+    top: 7%;
+    right: 7%;
+    z-index: 1;
     color: $color__grey--secondary;
-    display: flex;
-    justify-content: flex-end;
-    margin: 2% 3.5% 0 0;
     cursor: pointer;
 }

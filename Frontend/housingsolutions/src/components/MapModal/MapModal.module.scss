@@ -1,0 +1,23 @@
+@import '../../styles/config';
+
+.MapModal_close {
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+    background: $color__white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    color: $color__darkGrey;
+}
+
+.MapModal_Map {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+
+    @include respond-to(screen-small-landscape) {
+        height: 80%;
+    }
+
+    @include respond-to(screen-medium) {
+        height: 90%;
+    }
+}
