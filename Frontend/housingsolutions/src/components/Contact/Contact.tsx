@@ -16,7 +16,7 @@ const Contact: React.FunctionComponent = () => {
         </span>
       </header>
       <div className={styles.Contact_body}>
-        <MapContainer />
+        <MapContainer title="HousingSolutions" position={{ lat: 51.43337, lng: 5.47727 }} />
         <div className={styles.Contact_info}>
           <div className={styles.Contact_infoBlock}>
             <header className={styles.Contact_blockTitle}>
