@@ -56,27 +56,37 @@
 .PropertyMosaic {
     display: grid;
     grid-template-areas:
-        'mainBlock mainBlock livingBlock'
-        'mainBlock mainBlock commonBlock';
+        'mainBlock mainBlock mainBlock'
+        'livingBlock livingBlock commonBlock';
     grid-template-columns: 30% 25% auto;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 60% 40%;
     grid-gap: 0.3rem;
+    height: 30rem;
 
     @include respond-to(screen-small-landscape) {
+        grid-template-areas:
+            'mainBlock mainBlock livingBlock'
+            'mainBlock mainBlock commonBlock';
+        grid-template-rows: 50% 50%;
         grid-template-columns: 30% 30% auto;
     }
 
     @include respond-to(screen-medium) {
+        grid-template-areas:
+            'mainBlock mainBlock livingBlock'
+            'mainBlock mainBlock commonBlock';
         grid-template-columns: 20% 30% auto;
+        grid-template-rows: 50% 50%;
         grid-gap: 0.7rem;
-        height: 35rem;
+        height: 40rem;
     }
 
     @include respond-to(screen-large) {
+        height: 45rem;
         grid-template-areas:
             'mainBlock commonBlock livingBlock'
             'mainBlock bedroomBlock kitchenBlock';
-        grid-template-columns: 45% 30% auto;
+        grid-template-columns: 40% 30% auto;
     }
 }
 
