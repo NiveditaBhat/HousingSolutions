@@ -1,0 +1,73 @@
+@import '../../styles/config';
+
+.ContactBlock {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include respond-to(screen-small-landscape) {
+        top: 46%;
+    }
+
+    @include respond-to(screen-medium) {
+        width: auto;
+        top: 64%;
+        left: 10%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3rem;
+    }
+
+    @include respond-to(screen-xl) {
+        top: 33%;
+        left: 49%;
+    }
+}
+
+.ContactBlock_info {
+    padding: 1rem;
+    color: $color__darkGrey--secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond-to(screen-medium) {
+        padding: 1rem 2rem;
+        align-items: flex-start;
+    }
+}
+
+.ContactBlock_title {
+    font-size: $font__title;
+    padding: 1rem 0;
+}
+
+.ContactBlock_details {
+    padding: 1rem 0;
+    text-align: center;
+
+    @include respond-to(screen-medium) {
+        text-align: left;
+    }
+
+    .ContactBlock_socialMedia {
+        padding: 0;
+        justify-content: center;
+        @include respond-to(screen-medium) {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.ContactBlock_phoneDetails {
+    margin: 0;
+
+    span {
+        display: block;
+        padding: 0.5rem 0;
+    }
+}
