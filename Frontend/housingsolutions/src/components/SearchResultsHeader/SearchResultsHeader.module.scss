@@ -1,0 +1,35 @@
+@import '../../styles/config';
+
+.SearchResultsHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    color: $color__darkGrey--secondary;
+    padding: 1rem;
+
+    @include respond-to(screen-medium) {
+        flex-direction: row;
+    }
+
+    .SearchResultsHeader_titleContainer {
+        margin-bottom: 2rem;
+        @include respond-to(screen-medium) {
+            margin: 0;
+        }
+    }
+
+    .SearchResultsHeader_title {
+        font-size: 3rem;
+        margin-bottom: 5px;
+    }
+}
+
+.SearchResultsHeader_sortOptions {
+    width: 100%;
+    @include respond-to(screen-medium) {
+        width: auto;
+        padding-left: 12rem;
+    }
+}
