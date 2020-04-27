@@ -1,0 +1,33 @@
+@import '../../styles/config/';
+
+.Progressbar {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 25rem;
+    border-radius: 0.3rem;
+    height: 1rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+
+    &::-webkit-progress-value {
+        background: lightblue;
+    }
+
+    &::-webkit-progress-value {
+        background: $color__blue;
+    }
+
+    &::-moz-progress-value {
+        background: $color__blue;
+    }
+
+    &::-webkit-progress-bar {
+        background: $color__grey--secondary;
+    }
+}
+
+.ProgressBar_info {
+    color: $color__darkGrey--secondary;
+    font-size: $font__body--secondary;
+}
