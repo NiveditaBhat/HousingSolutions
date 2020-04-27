@@ -2,49 +2,47 @@ import * as React from "react";
 import * as types from "../../types";
 import styles from "./SearchResults.module.scss";
 import PropertyList from "../PropertyList/PropertyList";
-import Button from "../Button/Button";
-import classNames from "classnames";
-import SortProperties from "../SortProperties/SortProperties";
+import SearchResultsHeader from "../SearchResultsHeader/SearchResultsHeader";
+import LoadMore from "../LoadMore/LoadMore";
 
 interface SearchResultsProps {
-  properties: types.PropertyType[];
-  extraClasses?: string[];
+  loadedProperties?: number;
+  maxProperties?: number;
+  properties?: types.PropertyType[];
+  hideSortOption?: boolean;
+  hideTotalProperties?: boolean;
+  onLoadMore: () => void;
+  shouldNavigate?: boolean;
 }
 
 const SearchResults: React.FunctionComponent<SearchResultsProps> = ({
-  properties,
-  extraClasses,
+  loadedProperties,
+  maxProperties,
+  properties = [],
+  hideSortOption = false,
+  hideTotalProperties = false,
+  onLoadMore,
+  shouldNavigate = false,
 }) => {
   return (
-    <section className={classNames(styles.SearchResults, extraClasses)}>
+    <section className={styles.SearchResults}>
       {properties.length > 0 ? (
-        <>
-          <header className={styles.SearchResults_header}>
-            <div className={styles.SearchResults_titleContainer}>
-              <h2 className={styles.SearchResults_title}>
-                <span>Rental Apartments in The Netherlands</span>
-              </h2>
-              <span>
-                <strong>{properties.length} properties</strong>
-              </span>
-            </div>
-            <SortProperties />
-          </header>
-          <PropertyList properties={properties} />
-          <Button
-            category="primary"
-            type="button"
-            label="Load more"
-            onClick={() => {
-              alert("load");
-            }}
-            extraClasses={[styles.SearchResults_loadMore]}
+        <div className={styles.SearchResults_propertyList}>
+          <SearchResultsHeader
+            properties={properties}
+            hideSortOption={hideSortOption}
+            hideTotalProperties={hideTotalProperties}
           />
-        </>
-      ) : (
-        <div className={styles.SearchResults_NoResults}>
-          <h2>0 Property found</h2>
+          <PropertyList properties={properties} />
+          <LoadMore
+            onLoadMore={onLoadMore}
+            loadedProperties={loadedProperties}
+            maxProperties={maxProperties}
+            shouldNavigate={shouldNavigate}
+          />
         </div>
+      ) : (
+        <h2 className={styles.SearchResults_NoResults}>0 Property found</h2>
       )}
     </section>
   );

@@ -1,58 +1,28 @@
 @import '../../styles/config';
 
 .SearchResults {
-    display: flex;
-    flex-direction: column;
     background: $color__grey;
-    justify-content: center;
-    align-items: center;
     padding: 3rem 0;
+    min-height: 35vh;
 
-    @include respond-to(screen-xl) {
-        padding: 5rem 16rem 8rem 16rem;
-    }
-
-    .SearchResults_loadMore {
-        height: 4rem;
-        width: auto;
-        padding: 0 2.2rem;
-        font-size: $font__title--secondary;
-        justify-content: center;
+    @include respond-to(screen-large) {
+        padding: 5rem 0;
     }
 }
 
-.SearchResults_header {
+.SearchResults_propertyList {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 90%;
-    color: $color__darkGrey--secondary;
-    padding: 1rem;
-
-    @include respond-to(screen-medium) {
-        width: 95%;
-        flex-direction: row;
-    }
 
     @include respond-to(screen-large) {
-        width: 80%;
-    }
-
-    .SearchResults_titleContainer {
-        margin-bottom: 2rem;
-        @include respond-to(screen-medium) {
-            margin: 0;
-        }
-    }
-
-    .SearchResults_title {
-        font-size: 3rem;
-        margin-bottom: 5px;
+        width: 75%;
+        margin: auto;
     }
 }
 
 .SearchResults_NoResults {
     color: $color__darkGrey--secondary;
-    height: 35vh;
+    text-align: center;
 }
