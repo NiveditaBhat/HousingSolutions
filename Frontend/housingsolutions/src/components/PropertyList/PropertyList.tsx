@@ -14,7 +14,7 @@ const PropertyList: React.FunctionComponent<PropertyListProps> = ({ properties }
     <section className={styles.PropertyList}>
       {properties.map(property => (
         <div
-          key={property.id}
+          key={`${property.name}_${property.id}`}
           className={styles.PropertyList_anchor}
           onClick={() => {
             history.push(`/property/${property.id}`);

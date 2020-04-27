@@ -3,15 +3,13 @@
 .PropertyList {
     display: flex;
     flex-direction: column;
-
-    @include respond-to(screen-small-landscape) {
-        width: 100%;
-    }
+    justify-content: center;
+    width: 100%;
 
     @include respond-to(screen-medium) {
-        width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
+        align-items: center;
         grid-gap: 1rem;
         padding: 3rem 0;
     }
@@ -24,7 +22,7 @@
     @include respond-to(screen-xl) {
         width: 100%;
         display: grid;
-        grid-template-columns: 32% 32% 32%;
+        grid-template-columns: repeat(3, 33.3%);
         grid-gap: 2rem;
     }
 }
