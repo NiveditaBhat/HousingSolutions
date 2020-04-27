@@ -4,9 +4,11 @@ import SearchResults from "../../components/SearchResults/SearchResults";
 import { useQuery } from "@apollo/react-hooks";
 import * as types from "../../types";
 import { FILTER_PROPERTIES } from "../../gql/filterProperties";
+import { TOTAL_PROPERTIES } from "../../gql/totalProperties";
 import SearchError from "../../components/SearchError/SearchError";
 import Search from "../../components/Search/Search";
 import { connect } from "react-redux";
+import useMedia from "../../utils/useMedia";
 
 type sortFilterType = { sortParams: types.SortByFields; order: types.SortOrder };
 
@@ -25,10 +27,33 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const SearchPage: React.FunctionComponent<SearchPageProps> = ({ searchFilter, sortFilter }) => {
+  const isDesktop = useMedia("(min-width:64em)");
+  const limit = isDesktop ? 6 : 4;
   const { sortParams, order } = sortFilter;
-  const { data, error } = useQuery(FILTER_PROPERTIES, {
-    variables: { searchFilter, sortParams, order },
+  const [offset, setOffset] = React.useState(0);
+  const [properties, setProperties] = React.useState<types.PropertyType[]>([]);
+
+  const { data: totalProperties } = useQuery(TOTAL_PROPERTIES, {
+    variables: { searchFilter },
   });
+
+  const { data, error } = useQuery(FILTER_PROPERTIES, {
+    variables: { searchFilter, sortParams, order, offset: offset, limit: limit },
+  });
+
+  const maxProperties = totalProperties && totalProperties.property.totalProperties;
+
+  React.useEffect(() => {
+    setOffset(0);
+  }, [searchFilter]);
+
+  React.useEffect(() => {
+    if (data) {
+      const previous: types.PropertyType[] = offset === 0 ? [] : properties;
+      const current: types.PropertyType[] = data.property.searchProperties;
+      setProperties([...previous, ...current]);
+    }
+  }, [data]);
 
   return (
     <section className={styles.SearchPage_container}>
@@ -38,8 +63,10 @@ const SearchPage: React.FunctionComponent<SearchPageProps> = ({ searchFilter, so
       </div>
       {data && !error ? (
         <SearchResults
-          properties={data.property.searchProperties}
-          extraClasses={[styles.SearchPage_results]}
+          loadedProperties={properties.length}
+          maxProperties={maxProperties}
+          properties={properties}
+          onLoadMore={() => setOffset(offset + limit)}
         />
       ) : (
         <SearchError />
