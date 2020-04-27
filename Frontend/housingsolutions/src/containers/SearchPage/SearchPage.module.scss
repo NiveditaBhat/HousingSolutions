@@ -19,7 +19,6 @@
     }
 
     @include respond-to(screen-large) {
-        width: 80%;
         padding: 2rem 0;
         grid-template-areas:
             'titleBlock titleBlock titleBlock titleBlock titleBlock titleBlock titleBlock'
@@ -28,13 +27,8 @@
     }
 
     @include respond-to(screen-xl) {
+        width: 80%;
         grid-template-columns: 10% 10% 15% 15% 15% 15% auto;
-    }
-}
-
-.SearchPage_results {
-    @include respond-to(screen-large) {
-        padding: 2rem 16rem;
     }
 }
 
