@@ -1,27 +1,38 @@
 import * as React from "react";
-import styles from "./HomePage.module.scss";
 import SearchResults from "../../components/SearchResults/SearchResults";
 import SearchContainer from "../../components/SearchContainer/SearchContainer";
-import { GET_ALL_PROPERTIES } from "../../gql/getAllProperties";
 import { useQuery } from "@apollo/react-hooks";
 import AboutUs from "../../components/AboutUs/AboutUs";
-import Loader from "../../components/Loader/Loader";
 import CompanyStats from "../../components/CompanyStats/CompanyStats";
 import SearchError from "../../components/SearchError/SearchError";
 import Contact from "../../components/Contact/Contact";
+import { FILTER_PROPERTIES } from "../../gql/filterProperties";
+import styles from "./HomePage.module.scss";
+import { useHistory } from "react-router-dom";
+import useMedia from "../../utils/useMedia";
 
 const HomePage: React.FunctionComponent = () => {
-  const { loading, data, error } = useQuery(GET_ALL_PROPERTIES);
+  const isDesktop = useMedia("(min-width:64em)");
+  const limit = isDesktop ? 6 : 4;
+  const { data, error } = useQuery(FILTER_PROPERTIES, {
+    variables: { limit: limit },
+  });
+
+  const history = useHistory();
 
   return (
     <section className={styles.Home_container}>
       <SearchContainer />
       <AboutUs />
       <CompanyStats />
-      {loading ? (
-        <Loader />
-      ) : !error ? (
-        <SearchResults properties={data.property.allProperties} />
+      {data && !error ? (
+        <SearchResults
+          properties={data.property.searchProperties}
+          hideSortOption={true}
+          hideTotalProperties={true}
+          onLoadMore={() => history.push("/search")}
+          shouldNavigate={true}
+        />
       ) : (
         <SearchError />
       )}
