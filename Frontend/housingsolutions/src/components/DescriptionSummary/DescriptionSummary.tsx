@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as types from "../../types";
 import styles from "./DescriptionSummary.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { capitalize } from "../../utils/Capitalize";
+import Icon from "../Icon/Icon";
 
 interface DescriptionSummaryProps {
   propertyDetail: types.PropertyType;
@@ -17,9 +17,8 @@ const DescriptionSummary: React.FunctionComponent<DescriptionSummaryProps> = ({
   return (
     <ul className={styles.DescriptionSummary}>
       {propertySummary.map(item => (
-        <li className={styles.DescriptionSummary_item}>
-          <FontAwesomeIcon icon={item.id as IconProp} size="sm" />
-          <span>{capitalize(item.type(propertyDetail))}</span>
+        <li key={item.id} className={styles.DescriptionSummary_item}>
+          <Icon name={item.id as IconProp} text={capitalize(item.type(propertyDetail))} />
         </li>
       ))}
     </ul>
