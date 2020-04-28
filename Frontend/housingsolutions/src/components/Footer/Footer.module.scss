@@ -4,7 +4,6 @@
     display: flex;
     background: $color__blue;
     color: $color__white;
-    width: 100%;
     flex-direction: column;
 }
 
@@ -31,7 +30,7 @@
     font-size: $font__body;
 
     &:hover {
-        color: $color__orange;
+        color: lighten($color__orange--secondary, 10%);
         cursor: pointer;
     }
 }
