@@ -16,7 +16,7 @@ const MapContainer: React.FunctionComponent<MapContainerProps> = ({
   title,
   options,
 }) => {
-  const renderMarkers = (map: any, maps: any) => {
+  const renderMarkers = (map: any, maps: any): void => {
     new maps.Marker({
       position: position,
       map,
@@ -29,7 +29,7 @@ const MapContainer: React.FunctionComponent<MapContainerProps> = ({
         bootstrapURLKeys={{ key: "AIzaSyDa7i5x92aP8bXFH3RNw0YKlIkJL5TNwo4" }}
         defaultCenter={position}
         defaultZoom={8}
-        onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
+        onGoogleApiLoaded={({ map, maps }): void => renderMarkers(map, maps)}
         yesIWantToUseGoogleMapApiInternals={true}
         options={options}
       >

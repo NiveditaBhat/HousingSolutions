@@ -25,6 +25,13 @@ const Select: React.FunctionComponent<SelectProps> = ({
 
   const isDesktop = useMedia("(min-width:64em)");
 
+  const filterOptions = React.useCallback(option => {
+    return options.filter(selectOption => {
+      const optionObj = typeof selectOption === "string" ? selectOption : selectOption.text;
+      return optionObj !== option ? option : null;
+    });
+  }, []);
+
   React.useEffect(() => {
     if (preSelect) {
       setLabel(preSelect);
@@ -48,13 +55,6 @@ const Select: React.FunctionComponent<SelectProps> = ({
     },
     [toggle]
   );
-
-  const filterOptions = React.useCallback(option => {
-    return options.filter(selectOption => {
-      const optionObj = typeof selectOption === "string" ? selectOption : selectOption.text;
-      return optionObj !== option ? option : null;
-    });
-  }, []);
 
   const handleOptionsClick = React.useCallback(
     option => {

@@ -21,7 +21,7 @@ const PropertyMosaic: React.FunctionComponent<PropertyListProps> = ({
     : mosaicTypes;
   const buttonBlock = !isDesktop ? "common" : "kitchen";
   const morePhotos = propertyImages.length - types.length;
-  const getImageUrl = (images: types.PropertyImage[], type: string) => {
+  const getImageUrl = (images: types.PropertyImage[], type: string): string => {
     const image = images.find(image => image.alt === type);
     return image ? image.url : fallbackImage;
   };

@@ -13,6 +13,15 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({ suggestions, onCha
   const [input, setInputState] = React.useState("");
   const [filteredSuggestions, setSuggestions] = React.useState<Array<string>>([]);
 
+  const filterSuggestions = (inputValue: string): void => {
+    const filteredSuggestions = suggestions.filter(suggestion =>
+      suggestion.toLowerCase().includes(inputValue.toLowerCase()) ? suggestion : null
+    );
+    filteredSuggestions.length > 0
+      ? setSuggestions(filteredSuggestions)
+      : setSuggestions(["Sorry, can't find this location"]);
+  };
+
   const handleInputChange = React.useCallback(
     e => {
       const inputValue = e.target.value;
@@ -21,15 +30,6 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({ suggestions, onCha
     },
     [input]
   );
-
-  const filterSuggestions = (inputValue: string) => {
-    const filteredSuggestions = suggestions.filter(suggestion =>
-      suggestion.toLowerCase().includes(inputValue.toLowerCase()) ? suggestion : null
-    );
-    filteredSuggestions.length > 0
-      ? setSuggestions(filteredSuggestions)
-      : setSuggestions(["Sorry, can't find this location"]);
-  };
 
   const handleClose = React.useCallback(() => {
     setInputState("");
