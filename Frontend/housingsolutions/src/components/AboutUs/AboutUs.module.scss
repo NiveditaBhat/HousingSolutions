@@ -7,6 +7,10 @@
     color: $color__darkGrey--secondary;
 
     @include respond-to(screen-large) {
+        padding: 5rem 5rem 8rem 5rem;
+    }
+
+    @include respond-to(screen-xl) {
         padding: 5rem 16rem 8rem 16rem;
     }
 }
@@ -22,27 +26,21 @@
         padding: 3rem 0;
     }
 
-    @include respond-to(screen-large) {
+    @include respond-to(screen-xl) {
         flex-direction: row;
-    }
-}
-
-.AboutUs_info {
-    padding: 0;
-    font-size: $font__title--secondary;
-
-    @include respond-to(screen-medium) {
-        padding: 0 4rem;
-    }
-
-    @include respond-to(screen-large) {
-        padding: 0 2rem 0 0;
     }
 }
 
 .AboutUs_infoList {
     border-spacing: 1.2rem;
+    font-size: $font__title--secondary;
+
     @include respond-to(screen-large) {
+        margin-top: 4rem;
+    }
+
+    @include respond-to(screen-xl) {
+        margin-top: 0;
         margin-right: 5rem;
     }
 }
@@ -62,9 +60,14 @@
 
     @include respond-to(screen-medium) {
         padding-bottom: 3.5rem;
+        height: 45rem;
     }
 
     @include respond-to(screen-large) {
         padding: 0;
+    }
+
+    @include respond-to(screen-xl) {
+        height: 35rem;
     }
 }
