@@ -12,14 +12,14 @@ import { Provider } from "react-redux";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 ReactDOM.render(
-  <Router>
-    <ScrollToTop />
-    <ApolloProvider client={client}>
-      <Provider store={store}>
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <Router>
+        <ScrollToTop />
         <App />
-      </Provider>
-    </ApolloProvider>
-  </Router>,
+      </Router>
+    </Provider>
+  </ApolloProvider>,
   document.getElementById("root")
 );
 
