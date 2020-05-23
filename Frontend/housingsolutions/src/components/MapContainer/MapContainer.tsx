@@ -10,6 +10,14 @@ interface MapContainerProps {
   options?: MapOptions;
 }
 
+interface MarkerTitleProps {
+  text: string;
+}
+
+const MarkerTitle: React.SFC<MarkerTitleProps> = ({ text }) => (
+  <span className={styles.MarkerTitle}>{text}</span>
+);
+
 const MapContainer: React.FunctionComponent<MapContainerProps> = ({
   extraClasses,
   position,
@@ -33,7 +41,7 @@ const MapContainer: React.FunctionComponent<MapContainerProps> = ({
         yesIWantToUseGoogleMapApiInternals={true}
         options={options}
       >
-        {title && <span className={styles.MapContainer_marker}>{title}</span>}
+        {title && <MarkerTitle text={title} />}
       </GoogleMapReact>
     </div>
   );
