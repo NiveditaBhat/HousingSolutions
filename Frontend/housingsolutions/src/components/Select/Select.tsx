@@ -35,7 +35,10 @@ const Select: React.FunctionComponent<SelectProps> = ({
   React.useEffect(() => {
     if (preSelect) {
       setLabel(preSelect);
-      setOptions(filterOptions(preSelect));
+      if (isDesktop) {
+        setOptions(filterOptions(preSelect));
+      }
+      onChange(preSelect);
     }
   }, [preSelect]);
 
