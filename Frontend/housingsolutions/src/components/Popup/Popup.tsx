@@ -2,7 +2,6 @@ import * as React from "react";
 import styles from "./Popup.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "../Button/Button";
-import useMedia from "../../utils/useMedia";
 
 interface PopupProps {
   label: string;

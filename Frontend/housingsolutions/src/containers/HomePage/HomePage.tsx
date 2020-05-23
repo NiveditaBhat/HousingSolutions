@@ -19,13 +19,14 @@ const HomePage: React.FunctionComponent = () => {
   });
   const history = useHistory();
 
+  //add query string to search url
   const handleSubmit = React.useCallback(searchInput => {
     let queryString = "";
-
     Object.keys(searchInput).forEach(key => {
       queryString = `${queryString}&${key}=${searchInput[key]}`;
     });
     queryString = queryString.replace("&", "");
+
     history.push(`/search?${queryString}`);
   }, []);
 

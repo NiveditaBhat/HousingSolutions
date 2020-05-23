@@ -39,6 +39,6 @@
     font-size: 2.5rem;
 
     @include respond-to(screen-medium) {
-        ffont-size: $font__title;
+        font-size: $font__title;
     }
 }

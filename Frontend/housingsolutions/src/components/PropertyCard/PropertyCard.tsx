@@ -1,13 +1,13 @@
 import * as React from "react";
 import * as types from "../../types";
-import styles from "./Property.module.scss";
+import styles from "./PropertyCard.module.scss";
 import Icon from "../Icon/Icon";
 
-interface PropertyProps {
+interface PropertyCardProps {
   property: types.PropertyType;
 }
 
-const Property: React.FunctionComponent<PropertyProps> = ({ property }) => {
+const PropertyCard: React.FunctionComponent<PropertyCardProps> = ({ property }) => {
   const mainImage = property.Image.find(image => image.alt === "main");
   const image = mainImage ? mainImage : property.Image[0];
   const interiorType = property.interior.toLowerCase().replace("_", "-");
@@ -39,4 +39,4 @@ const Property: React.FunctionComponent<PropertyProps> = ({ property }) => {
   );
 };
 
-export default Property;
+export default PropertyCard;

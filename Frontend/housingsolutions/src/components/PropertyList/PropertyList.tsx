@@ -1,8 +1,8 @@
 import * as React from "react";
 import styles from "./PropertyList.module.scss";
 import * as types from "../../types";
-import Property from "../Property/Property";
 import { useHistory } from "react-router-dom";
+import PropertyCard from "../PropertyCard/PropertyCard";
 
 interface PropertyListProps {
   properties: types.PropertyType[];
@@ -20,7 +20,7 @@ const PropertyList: React.FunctionComponent<PropertyListProps> = ({ properties }
             history.push(`/property/${property.id}`);
           }}
         >
-          <Property property={property} />
+          <PropertyCard property={property} />
         </div>
       ))}
     </section>

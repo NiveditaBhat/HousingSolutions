@@ -125,3 +125,22 @@ export const propertySummary = [
     },
   },
 ];
+
+export const footerlinks = [
+  {
+    title: "Get Started",
+    subLinks: ["Home", "Sign up", "Downloads"],
+  },
+  {
+    title: "About Us",
+    subLinks: ["Company Information", "Contact Us", "Reviews"],
+  },
+  {
+    title: "Support",
+    subLinks: ["FAQ", "Help Desk", "Forums"],
+  },
+  {
+    title: "Legal",
+    subLinks: ["Terms Of Service", "Terms Of Use", "Privacy Policy"],
+  },
+];

@@ -11,13 +11,16 @@ const CompanyStats: React.FunctionComponent = () => {
   const ref = React.useRef<HTMLElement>(null);
   const [animateCounter, setAnimation] = React.useState(false);
 
-  const counterUp = React.useCallback(() => {
+  const counterUp = (): void => {
     const isVisible = ref.current && checkVisibility(ref.current);
     if (isVisible) setAnimation(true);
-  }, [setAnimation]);
+  };
 
   React.useEffect(() => {
     window.addEventListener("scroll", throttle(counterUp, 250));
+    return (): void => {
+      window.removeEventListener("scroll", throttle(counterUp, 250));
+    };
   });
 
   return (

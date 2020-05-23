@@ -20,7 +20,7 @@ const PropertyDetailPage: React.FunctionComponent = () => {
   const [mapModal, toggleModal] = React.useState(false);
   const [imageIndex, setImageIndex] = React.useState(0);
 
-  const handleClick = React.useCallback(
+  const showModal = React.useCallback(
     (target, url = "") => {
       if (target === "map") {
         toggleModal(true);
@@ -42,8 +42,8 @@ const PropertyDetailPage: React.FunctionComponent = () => {
       {data && !error ? (
         <div>
           <PropertyDetailHeading propertyDetail={propertyDetail} />
-          <PropertyMosaic propertyImages={propertyDetail.Image} onClick={handleClick} />
-          <PropertyDescription propertyDetail={propertyDetail} onClick={handleClick} />
+          <PropertyMosaic propertyImages={propertyDetail.Image} onClick={showModal} />
+          <PropertyDescription propertyDetail={propertyDetail} onClick={showModal} />
           {carousel && (
             <PropertyCarousel
               propertyImages={propertyDetail.Image}
