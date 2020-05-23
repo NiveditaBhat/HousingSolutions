@@ -21,7 +21,8 @@ const HomePage: React.FunctionComponent = () => {
 
   const handleSubmit = React.useCallback(searchInput => {
     let queryString = "";
-    Object.keys(searchInput).map(key => {
+
+    Object.keys(searchInput).forEach(key => {
       queryString = `${queryString}&${key}=${searchInput[key]}`;
     });
     queryString = queryString.replace("&", "");
