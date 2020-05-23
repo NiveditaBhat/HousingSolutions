@@ -3,11 +3,12 @@ import * as React from "react";
 import styles from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuBar from "../MenuBar/MenuBar";
-import CompanyLogo from "../CompanyLogo/CompanyLogo";
 import useMedia from "../../utils/useMedia";
+import { menu } from "../../utils/data";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Header: React.FunctionComponent = () => {
-  const [menuBarStatus, toggleSideBar] = React.useState(false);
+  const [isMenuBarVisible, toggleMenubar] = React.useState(false);
   const isDesktop = useMedia("(min-width:64em)");
 
   return (
@@ -15,29 +16,34 @@ const Header: React.FunctionComponent = () => {
       <header className={styles.Header}>
         <ul className={styles.Header_items}>
           <li className={`${styles.Header_item} ${styles.Header_item___title} `}>
-            <CompanyLogo />
+            <h1 className={styles.Header_title}>
+              <span>HousingSolutions</span>
+            </h1>
           </li>
-          <li className={styles.Header_item}>
-            <section className={styles.Header_contact}>
-              <FontAwesomeIcon icon="phone-alt" className={styles.Header_phoneIcon} />
-              <span>call us - 01633 030040</span>
-            </section>
-          </li>
-          <li className={`${styles.Header_item} ${styles.Header_item___login}`}>Login</li>
-          <li className={`${styles.Header_item} ${styles.Header_item___register}`}>Register</li>
+          {menu.map(menuItem => (
+            <li key={menuItem.name} className={styles.Header_item}>
+              <Link to={menuItem.anchorTo}>{menuItem.name}</Link>
+            </li>
+          ))}
           <li
             className={`${styles.Header_item} ${styles.Header_item___menuBar}`}
-            onClick={() => toggleSideBar(!menuBarStatus)}
+            onClick={() => toggleMenubar(!isMenuBarVisible)}
           >
-            {!menuBarStatus ? (
+            {!isMenuBarVisible ? (
               <FontAwesomeIcon icon="bars" />
             ) : (
               <FontAwesomeIcon icon="times" className={styles.Header_closeIcon} size="lg" />
             )}
           </li>
         </ul>
-        {!isDesktop && menuBarStatus && <MenuBar />}
       </header>
+      {!isDesktop && isMenuBarVisible && (
+        <MenuBar
+          onMenuClick={() => {
+            toggleMenubar(!isMenuBarVisible);
+          }}
+        />
+      )}
     </>
   );
 };

@@ -5,7 +5,6 @@
     width: 100%;
     color: $color__white;
     background: $color__blue;
-    padding: 0.5rem;
 }
 
 .Header_items {
@@ -36,8 +35,13 @@
     }
 
     &:hover {
-        color: $color__orange--secondary;
+        color: lighten($color__orange--secondary, 30%);
         cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
     }
 }
 
@@ -50,31 +54,22 @@
     }
 }
 
-.Header_item___login {
-    &:after {
-        content: '|';
-        display: inline-block;
-        margin-left: 1.3rem;
+.Header_title {
+    font-weight: bold;
+    margin: auto 0;
+    letter-spacing: 2px;
+
+    @include respond-to(screen-large) {
+        letter-spacing: 3px;
     }
 
-    &:hover {
-        &:after {
-            color: $color__white;
+    span {
+        font-size: $font__title--secondary;
+
+        @include respond-to(screen-medium) {
+            font-size: $font__title;
         }
     }
-}
-
-.Header_item___register {
-    padding-left: 0.1rem;
-}
-
-.Header_contact {
-    display: flex;
-    align-items: center;
-}
-
-.Header_phoneIcon {
-    margin-right: 1rem;
 }
 
 .Header_item___menuBar {
