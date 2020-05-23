@@ -17,12 +17,20 @@ const HomePage: React.FunctionComponent = () => {
   const { data, error } = useQuery(FILTER_PROPERTIES, {
     variables: { limit: limit },
   });
-
   const history = useHistory();
+
+  const handleSubmit = React.useCallback(searchInput => {
+    let queryString = "";
+    Object.keys(searchInput).map(key => {
+      queryString = `${queryString}&${key}=${searchInput[key]}`;
+    });
+    queryString = queryString.replace("&", "");
+    history.push(`/search?${queryString}`);
+  }, []);
 
   return (
     <section className={styles.Home_container}>
-      <SearchContainer />
+      <SearchContainer onSubmit={handleSubmit} />
       <AboutUs />
       <CompanyStats />
       {data && !error ? (
