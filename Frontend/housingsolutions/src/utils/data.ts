@@ -1,5 +1,11 @@
 import { PropertyType } from "../types";
 
+export const menu = [
+  { name: "Home", anchorTo: "/" },
+  { name: "Search", anchorTo: "/search" },
+  { name: "Contact", anchorTo: "/#contact" },
+];
+
 export const searchOptions = {
   city: [
     "Amsterdam",
@@ -65,6 +71,7 @@ export const aboutUs = [
 export const socialMediaIcons = [
   { type: ["fab", "facebook"] },
   { type: ["fab", "twitter"] },
+  { type: ["fab", "instagram"] },
   { type: ["fab", "google-plus"] },
 ];
 
