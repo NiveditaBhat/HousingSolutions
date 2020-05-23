@@ -7,11 +7,20 @@ import ClickOutside from "../ClickOutside/ClickOutside";
 interface SearchBarProps {
   suggestions: Array<string>;
   onChange: (value: string) => void;
+  preSelect?: string;
 }
 
-const SearchBar: React.FunctionComponent<SearchBarProps> = ({ suggestions, onChange }) => {
+const SearchBar: React.FunctionComponent<SearchBarProps> = ({
+  suggestions,
+  onChange,
+  preSelect,
+}) => {
   const [input, setInputState] = React.useState("");
   const [filteredSuggestions, setSuggestions] = React.useState<Array<string>>([]);
+
+  React.useEffect(() => {
+    if (preSelect) setInputState(preSelect);
+  }, [preSelect]);
 
   const filterSuggestions = (inputValue: string): void => {
     const filteredSuggestions = suggestions.filter(suggestion =>
