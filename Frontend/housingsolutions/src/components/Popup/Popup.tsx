@@ -17,11 +17,9 @@ const Popup: React.FunctionComponent<PopupProps> = ({
   handleToggle,
   onOptionsClicked,
 }) => {
-  const isTablet = useMedia("(min-width:48em)");
-
   return (
-    <>
-      <section className={styles.Popup}>
+    <section className={styles.Popup_backdrop}>
+      <div className={styles.Popup}>
         <header className={styles.Popup_header}>
           <span className={styles.Popup_title}>{label}</span>
           <button onClick={handleToggle}>
@@ -50,9 +48,8 @@ const Popup: React.FunctionComponent<PopupProps> = ({
             extraClasses={[styles.Popup_closeButton]}
           />
         </footer>
-      </section>
-      {isTablet && <div className={styles.Popup_backdrop}></div>}
-    </>
+      </div>
+    </section>
   );
 };
 

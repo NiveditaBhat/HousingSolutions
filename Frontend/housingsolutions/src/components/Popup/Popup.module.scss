@@ -4,9 +4,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 6;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: lighten($color__grey, 4%);
     color: $color__darkGrey--secondary;
     box-sizing: border-box;
@@ -29,7 +28,6 @@
     z-index: 5;
     width: 100%;
     height: 100vh;
-    overflow-y: hidden;
 }
 
 .Popup_header {
