@@ -1,0 +1,13 @@
+@import '../../styles/config/';
+
+.MenuBarToggler {
+    color: $color__white;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    &:hover {
+        color: $color__white;
+        border: none;
+    }
+}
