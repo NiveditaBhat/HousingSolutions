@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 import classNames from "classnames";
 
 interface ButtonProps {
-  label: string;
+  label?: string;
   category: "primary" | "secondary" | "default";
   type: "submit" | "button";
   onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
@@ -32,7 +32,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
       onClick={onClick}
       className={classNames(styles.Button, styles[buttonType], extraClasses)}
     >
-      <span>{label}</span>
+      {label && <span>{label}</span>}
       {children}
     </button>
   );

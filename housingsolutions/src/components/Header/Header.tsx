@@ -1,16 +1,10 @@
 import * as React from "react";
-
 import styles from "./Header.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MenuBar from "../MenuBar/MenuBar";
-import useMedia from "../../utils/useMedia";
 import { menu } from "../../utils/data";
 import { HashLink as Link } from "react-router-hash-link";
+import MenuBarToggler from "../MenuBarToggler/MenuBarToggler";
 
 const Header: React.FunctionComponent = () => {
-  const [isMenuBarVisible, toggleMenubar] = React.useState(false);
-  const isDesktop = useMedia("(min-width:64em)");
-
   return (
     <>
       <header className={styles.Header}>
@@ -25,25 +19,11 @@ const Header: React.FunctionComponent = () => {
               <Link to={menuItem.anchorTo}>{menuItem.name}</Link>
             </li>
           ))}
-          <li
-            className={`${styles.Header_item} ${styles.Header_item___menuBar}`}
-            onClick={() => toggleMenubar(!isMenuBarVisible)}
-          >
-            {!isMenuBarVisible ? (
-              <FontAwesomeIcon icon="bars" />
-            ) : (
-              <FontAwesomeIcon icon="times" className={styles.Header_closeIcon} size="lg" />
-            )}
+          <li className={`${styles.Header_item} ${styles.Header_item___menuBar}`}>
+            <MenuBarToggler />
           </li>
         </ul>
       </header>
-      {!isDesktop && isMenuBarVisible && (
-        <MenuBar
-          onMenuClick={() => {
-            toggleMenubar(!isMenuBarVisible);
-          }}
-        />
-      )}
     </>
   );
 };
