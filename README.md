@@ -2,7 +2,7 @@
 
 
 # HousingSolutions 
-Personal Project - Mock Website for finding rental properties
+Personal Project - Mock Website for finding rental properties (work in progress)
 
 ### [Demo](http://housingsolutions.nvbht.com/)
 
